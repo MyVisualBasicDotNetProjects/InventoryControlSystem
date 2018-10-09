@@ -1,0 +1,1817 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<title>System Analysis and Design Document</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-link:"No Spacing Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-link:"No Spacing";
+	font-family:"Times New Roman","serif";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:792.0pt 612.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section2
+	{page:Section2;}
+@page Section3
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section3
+	{page:Section3;}
+@page Section4
+	{size:792.0pt 612.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section4
+	{page:Section4;}
+@page Section5
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section5
+	{page:Section5;}
+@page Section6
+	{size:792.0pt 612.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section6
+	{page:Section6;}
+@page Section7
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section7
+	{page:Section7;}
+@page Section8
+	{size:792.0pt 612.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section8
+	{page:Section8;}
+@page Section9
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section9
+	{page:Section9;}
+@page Section10
+	{size:792.0pt 612.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section10
+	{page:Section10;}
+@page Section11
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.Section11
+	{page:Section11;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:24.0pt;line-height:115%'>Table of Contents</span></b></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%'>Chapter One   Introduction
+………………………………………………………………………………………………… 1</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Background of the
+Organization ……………………………………………………………………….. 1</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Statement of the
+problem ………………………………………………………………………………… 1</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>3)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Objective of the
+study ………………………………………………………………………………………. 3</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>4)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Purpose of the
+system ……………………………………………………………………………………… 4</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>5)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Scope and
+Limitation …………………………………………………………………………………………5</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%'>Chapter Two   Current
+System …………………………………………………………………………………………… 6</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%'>Chapter
+Three System Analysis ………………………………………………………………………………………….. 8</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Process model
+(Data Flow Diagrams) ……………………………………………………………….. 8</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:54.0pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Process Logic
+……………………………………………………………………………………………………. 11</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%'>Chapter Four   Proposed
+System ………………………………………………………………………………………… 13</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:53.5pt;text-indent:-18.0pt'><span
+style='font-size:12.0pt;line-height:115%'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;line-height:115%'>Functional
+Requirements </span><span style='font-size:12.0pt;line-height:115%'>…………………………… ~dulla^@204~ ~dulla^@204~ /span></p>
+
+<p class=MsoListParagra~dulla^@204~ yle='margin-left:53.5pt;text-indent:-~dulla^@204~ 
+style='font-size:12.0pt;line-height~dulla^@204~ n style='font:7.0pt "Times New Roman"~dulla^@204~ ;&nbsp;&nbsp;&nbsp;
+</span></span><s~dulla^@204~ nt-size:12.0pt;line-height:115%'>Non–~dulla^@204~ equirements </span><span style='font-~dulla^@204~ ine-height:115%'>……………………………………………………~dulla^@204~ 5</span></p>
+
+<p class=MsoNormal><s~dulla^@204~ nt-size:12.0pt;line-height:115%'>Chap~dulla^@204~ ystem
+Design ……………………………………………………………~dulla^@204~  19</span></p>
+
+<p class=MsoListPar~dulla^@204~ st style='margin-left:53.5pt;text-ind~dulla^@204~ <span
+style='font-size:12.0pt;line-h~dulla^@204~ )<span style='font:7.0pt "Times New R~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;
+</span></sp~dulla^@204~ e='font-size:12.0pt;line-height:115%'~dulla^@204~ esign
+(ER- Diagram) …………………………………………~dulla^@204~  19</span></p>
+
+<p class=MsoListPar~dulla^@204~ dle style='margin-left:53.5pt;text-in~dulla^@204~ ><span
+style='font-size:12.0pt;line-~dulla^@204~ 2)<span style='font:7.0pt "Times New ~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></s~dulla^@204~ le='font-size:12.0pt;line-height:115%~dulla^@204~ el
+………………………………………………………………………………………~dulla^@204~ an></p>
+
+<p class=MsoListParagraphC~dulla^@204~ le='margin-left:53.5pt;text-indent:-1~dulla^@204~ 
+style='font-size:12.0pt;line-height:~dulla^@204~  style='font:7.0pt "Times New Roman"'~dulla^@204~ &nbsp;&nbsp;&nbsp;
+</span></span><sp~dulla^@204~ t-size:12.0pt;line-height:115%'>Norma~dulla^@204~ ……………………………………………………………………………………………… ~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpMidd~dulla^@204~ gin-left:53.5pt;text-indent:-18.0pt'>~dulla^@204~ 'font-size:12.0pt;line-height:115%'>4~dulla^@204~ 'font:7.0pt "Times New Roman"'>&nbsp;~dulla^@204~ nbsp;&nbsp;
+</span></span><span styl~dulla^@204~ 12.0pt;line-height:115%'>Database Dia~dulla^@204~ …………………………………………………………………………….. 22</s~dulla^@204~ p class=MsoListParagraphCxSpMiddle st~dulla^@204~ eft:53.5pt;text-indent:-18.0pt'><span~dulla^@204~ -size:12.0pt;line-height:115%'>5)<spa~dulla^@204~ :7.0pt "Times New Roman"'>&nbsp;&nbsp~dulla^@204~ &nbsp;
+</span></span><span style='fo~dulla^@204~ t;line-height:115%'>User Interface
+…~dulla^@204~ ………………………………………………………………… 23</span></~dulla^@204~ s=MsoListParagraphCxSpMiddle style='m~dulla^@204~ .5pt;text-indent:-18.0pt'><span
+styl~dulla^@204~ 12.0pt;line-height:115%'>6)<span styl~dulla^@204~  "Times New Roman"'>&nbsp;&nbsp;&nbsp~dulla^@204~ 
+</span></span><span style='font-siz~dulla^@204~ -height:115%'>Hardware Mapping
+……………~dulla^@204~ ……………………………………………… 30</span></p>
+
+<~dulla^@204~ stParagraphCxSpMiddle style='margin-l~dulla^@204~ xt-indent:-18.0pt'><span
+style='font~dulla^@204~ line-height:115%'>7)<span style='font~dulla^@204~  New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ n></span><span style='font-size:12.0p~dulla^@204~ :115%'>Network Design
+……………………………………~dulla^@204~ …………………………… 31</span></p>
+
+<p class~dulla^@204~ raphCxSpMiddle style='margin-left:0cm~dulla^@204~ e='font-size:12.0pt;line-height:115%'~dulla^@204~ pan></p>
+
+<p class=MsoListParagraph~dulla^@204~ yle='margin-left:54.0pt;text-indent:-~dulla^@204~ 
+style='font-size:12.0pt;line-height~dulla^@204~ n style='font:7.0pt "Times New Roman"~dulla^@204~ ;&nbsp;&nbsp;&nbsp;
+</span></span><s~dulla^@204~ nt-size:12.0pt;line-height:115%'>Bibl~dulla^@204~ …………………………………………………………………………………………………~dulla^@204~ p>
+
+<p class=MsoListParagraphCxSpMi~dulla^@204~ argin-left:54.0pt;text-indent:-18.0pt~dulla^@204~ e='font-size:12.0pt;line-height:115%'~dulla^@204~ e='font:7.0pt "Times New Roman"'>&nbs~dulla^@204~ ;&nbsp;&nbsp;
+</span></span><span st~dulla^@204~ e:12.0pt;line-height:115%'>Appendix 1~dulla^@204~ ……………………………………………………………………………..  II</~dulla^@204~ <p class=MsoListParagraphCxSpMiddle s~dulla^@204~ left:54.0pt;text-indent:-18.0pt'><spa~dulla^@204~ t-size:12.0pt;line-height:115%'>3)<sp~dulla^@204~ t:7.0pt "Times New Roman"'>&nbsp;&nbs~dulla^@204~ ;&nbsp;
+</span></span><span style='f~dulla^@204~ pt;line-height:115%'>Appendix 2
+…………~dulla^@204~ ……………………………………………………………..  IV</span><~dulla^@204~ ss=MsoListParagraphCxSpLast style='ma~dulla^@204~ 0pt'><span
+style='font-size:12.0pt;l~dulla^@204~ 5%'>&nbsp;</span></p>
+
+<p class=Mso~dulla^@204~ style='font-size:12.0pt;line-height:1~dulla^@204~ span></p>
+
+<p class=MsoNormal><span~dulla^@204~ size:12.0pt;line-height:115%'>&nbsp;<~dulla^@204~ 
+<p class=MsoNormal><span style='font~dulla^@204~ line-height:115%'> </span></p>
+
+<p ~dulla^@204~ al align=center style='text-align:cen~dulla^@204~ ht:150%'><b><span
+style='font-size:1~dulla^@204~ ight:150%'>Spare Part Inventory Contr~dulla^@204~ ICS)</span></b></p>
+
+<p class=MsoNo~dulla^@204~ nter style='margin-left:22.5pt;text-a~dulla^@204~ 
+line-height:150%'><b><u><span style=~dulla^@204~ .0pt;line-height:150%'>Chapter
+One</~dulla^@204~ </p>
+
+<p class=MsoNormal align=cent~dulla^@204~ gin-left:22.5pt;text-align:center;
+l~dulla^@204~ 0%'><b><span style='font-size:20.0pt;~dulla^@204~ 50%'>Introduction</span></b></p>
+
+<~dulla^@204~ stParagraph align=center style='text-~dulla^@204~ text-indent:
+-18.0pt;line-height:150~dulla^@204~ tyle='font-size:18.0pt;line-height:15~dulla^@204~ style='font:7.0pt "Times New Roman"'>~dulla^@204~ </span></span></b><b><u><span
+style=~dulla^@204~ .0pt;line-height:150%'>Background of ~dulla^@204~ ion</span></u></b></p>
+
+<p class=Ms~dulla^@204~ ='text-align:justify;text-indent:36.0~dulla^@204~ t:
+150%'><span style='font-size:12.0~dulla^@204~ t:150%'>Nesro Kemal auto spare
+parts~dulla^@204~ vernmental profit making retailer sho~dulla^@204~ ocated
+around Senga -tera area. The ~dulla^@204~  in this sector since 2001 G.C. It
+h~dulla^@204~ , Nejat auto spare part around Tekele~dulla^@204~ ch was
+established in 2005 and a sto~dulla^@204~ mazoria. The shop is engaged in the
+~dulla^@204~ lling of genuine and local spare part~dulla^@204~  cars especially
+for Toyota models. ~dulla^@204~ lude both motor and body parts .The s~dulla^@204~ sion of expanding the shop by increas~dulla^@204~ r of items depth and
+opening more br~dulla^@204~  our country. The company has totally~dulla^@204~ 
+and eight employees in all the shops~dulla^@204~ gaged in different jobs.</span></p>
+~dulla^@204~ oListParagraph align=center style='te~dulla^@204~ er;text-indent:
+-18.0pt;line-height:~dulla^@204~ n style='font-size:18.0pt;line-height~dulla^@204~ n
+style='font:7.0pt "Times New Roman~dulla^@204~ p; </span></span></b><b><u><span
+sty~dulla^@204~ :18.0pt;line-height:150%'>Statement o~dulla^@204~ </span></u></b></p>
+
+<p class=MsoNo~dulla^@204~ ext-indent:36.0pt;line-height:150%'><~dulla^@204~ font-size:12.0pt;line-height:150%'>Th~dulla^@204~ ems related to
+inventory control and~dulla^@204~ ystem of the two spare parts are list~dulla^@204~ an></p>
+
+<p class=MsoNormal style='~dulla^@204~ 50%'><b><span style='font-size:14.0pt~dulla^@204~ t:150%'>1. Difficult to find an item<~dulla^@204~ >
+
+<p class=MsoNormal style='line-h~dulla^@204~ <span style='font-size:12.0pt;
+line-~dulla^@204~            Currently, products are a ~dulla^@204~ g the paper
+prepared using Ms Excel ~dulla^@204~  numbers are listed in ascending orde~dulla^@204~ est come from customer, the salespers~dulla^@204~  time for search through
+out each pa~dulla^@204~ that particular item exist or not, wh~dulla^@204~ 
+whole process of sales took a long ~dulla^@204~ ad to customer dissatisfaction.</span~dulla^@204~ lass=MsoNormal style='line-height:150~dulla^@204~ e='font-size:12.0pt;
+line-height:150~dulla^@204~ an></p>
+
+<p class=MsoNormal style='~dulla^@204~ 50%'><b><span style='font-size:14.0pt~dulla^@204~ t:150%'>2. Difficulty to know items o~dulla^@204~ </b></p>
+
+<p class=MsoNormal style=~dulla^@204~ 36.0pt;line-height:150%'><span
+style~dulla^@204~ 2.0pt;line-height:150%'>To know items~dulla^@204~ inuous
+update to the inventory list ~dulla^@204~ ntain available amount of items have~dulla^@204~ e as sales occur .The other method is~dulla^@204~ t the stock card.
+But, currently the~dulla^@204~  check the shelves for the item asked by the
+customer. Since there is no well ~dulla^@204~ tem that continuously check the
+amou~dulla^@204~ at is on hand. This makes products ex~dulla^@204~ t, since
+items on hand are known by ~dulla^@204~ y searching the item on the stock car~dulla^@204~ 
+
+<p class=MsoNormal style='text-in~dulla^@204~ ine-height:150%'><span
+style='font-s~dulla^@204~ ne-height:150%'>Not easily knowing th~dulla^@204~ tem
+on hand leads to many problems. ~dulla^@204~ ordering process and the
+reordering ~dulla^@204~ not known exactly. For example, if th~dulla^@204~ 
+wants to keep a certain amount in s~dulla^@204~ rder a certain amount, it is
+difficu~dulla^@204~ at minimum amount or level. To know t~dulla^@204~ evel they
+have to count or refer to ~dulla^@204~ d or the sales book during certain ti~dulla^@204~ herefore, to know the minimum amount ~dulla^@204~  level continuous
+update of the stoc~dulla^@204~  take place and after the person who ~dulla^@204~ le for making out order have to look ~dulla^@204~ k card which have
+reached their mini~dulla^@204~ his make the ordering process very co~dulla^@204~ pan></p>
+
+<p class=MsoNormal style=~dulla^@204~ 150%'><b><span style='font-size:14.0p~dulla^@204~ ht:150%'>3. Difficult to know items o~dulla^@204~  and warehouse</span></b></p>
+
+<p c~dulla^@204~ l style='text-indent:36.0pt;line-heig~dulla^@204~ n
+style='font-size:12.0pt;line-heigh~dulla^@204~  is no simultaneous controlling
+or l~dulla^@204~ ducts in branch shops and warehouse t~dulla^@204~ dling
+customer request to be unsatis~dulla^@204~ he sales look at an item which is
+re~dulla^@204~ e customer in the shop shelves and co~dulla^@204~ it, he has to
+look at the store or b~dulla^@204~ ventory paper. But since there is no~dulla^@204~ pdate of the branch shop and warehous~dulla^@204~ evel the salesperson
+don’t have the ~dulla^@204~ ge if the item that he want exists in~dulla^@204~ hop or not.</span></p>
+
+<p class=Ms~dulla^@204~ ='text-indent:36.0pt;line-height:150%~dulla^@204~ e='font-size:12.0pt;line-height:150%'~dulla^@204~ ></p>
+
+<p class=MsoNormal style='te~dulla^@204~ 0pt;line-height:150%'><span
+style='f~dulla^@204~ pt;line-height:150%'>&nbsp;</span></p~dulla^@204~ =MsoNormal style='text-indent:36.0pt;~dulla^@204~ 50%'><span
+style='font-size:12.0pt;l~dulla^@204~ 0%'>&nbsp;</span></p>
+
+<p class=Mso~dulla^@204~ 'line-height:150%'><b><span style='fo~dulla^@204~ t;
+line-height:150%'>4. Exposition t~dulla^@204~ ></b></p>
+
+<p class=MsoNormal style~dulla^@204~ :150%'>                <span
+style='~dulla^@204~ 0pt;line-height:150%'>Since inventory~dulla^@204~ lling
+mechanism are not well establi~dulla^@204~ p is exposed to theft. Better
+contro~dulla^@204~ sm should be established to minimize ~dulla^@204~ as much as
+possible.</span></p>
+
+<~dulla^@204~ rmal style='line-height:150%'><b><spa~dulla^@204~ -size:14.0pt;
+line-height:150%'>5. M~dulla^@204~ les on credit is difficult</span></b>~dulla^@204~ ass=MsoNormal style='text-indent:36.0~dulla^@204~ t:150%'><span
+style='font-size:12.0p~dulla^@204~ :150%'>Since items sold on credit are~dulla^@204~ a big note book, one has to continuou~dulla^@204~ is book so that the
+cash from sales ~dulla^@204~  be collected on time. and also items~dulla^@204~ ocally bought on credit base due date~dulla^@204~  system must be established
+so that ~dulla^@204~ e settled before the due date.  </spa~dulla^@204~ class=MsoNormal style='line-height:15~dulla^@204~ style='font-size:14.0pt;
+line-height~dulla^@204~ ble to easily know monthly total sale~dulla^@204~ ></p>
+
+<p class=MsoNormal style='te~dulla^@204~ 0pt;line-height:150%'><span
+style='f~dulla^@204~ pt;line-height:150%'>To know the mont~dulla^@204~ e has to
+add all the sales of the mo~dulla^@204~ at the monthly gross sales. This
+pro~dulla^@204~ time consuming and prone to errors. T~dulla^@204~ cking
+mechanism is only by checking ~dulla^@204~ book and by comparing it with the
+co~dulla^@204~ rtain product so that the difference ~dulla^@204~ ofit.</span></p>
+
+<p class=MsoNorma~dulla^@204~ -indent:36.0pt;line-height:150%'><spa~dulla^@204~ t-size:12.0pt;line-height:150%'>&nbsp~dulla^@204~ 
+
+<p class=MsoListParagraph align=ce~dulla^@204~ ext-align:center;text-indent:
+-18.0p~dulla^@204~ tyle='font-size:18.0pt;line-height:11~dulla^@204~ style='font:7.0pt "Times New Roman"'>~dulla^@204~ </span></span></b><b><u><span
+style=~dulla^@204~ .0pt;line-height:115%'>Objective of t~dulla^@204~ n></u></b></p>
+
+<p class=MsoNormal>~dulla^@204~ font-size:12.0pt;line-height:115%'>Th~dulla^@204~  of the project are classified into t~dulla^@204~ nd specific
+objectives. </span></p>~dulla^@204~ soNormal><u><span style='font-size:16~dulla^@204~ ght:115%'>General
+objective </span><~dulla^@204~  class=MsoNormal style='text-align:ju~dulla^@204~ style='font-size:12.0pt;
+line-height~dulla^@204~       The main objective of this stud~dulla^@204~ e the
+current manual inventory contr~dulla^@204~ ment system of the company into an
+a~dulla^@204~  This will help to achieve the strate~dulla^@204~  the business organization.</span></p~dulla^@204~ =MsoNormal><u><span style='font-size:~dulla^@204~ eight:115%'>Specific
+objective</span~dulla^@204~ <p class=MsoNormal style='text-indent~dulla^@204~ height:150%'><span
+style='font-size:~dulla^@204~ eight:150%'>The specific objective of~dulla^@204~ ry control system is to solve the pro~dulla^@204~ e pointed out by the
+manager and emp~dulla^@204~  interview and questionnaire we distr~dulla^@204~ ></p>
+
+<p class=MsoNormal style='te~dulla^@204~ 0pt;line-height:150%'><span
+style='f~dulla^@204~ pt;line-height:150%'>These problems a~dulla^@204~ /p>
+
+<p class=MsoListParagraphCxSpF~dulla^@204~ argin-left:63.0pt;text-indent:-27.0pt~dulla^@204~ t:150%'><span style='font-size:12.0pt~dulla^@204~ 150%;font-family:
+Symbol'>·<span sty~dulla^@204~ t "Times New Roman"'>&nbsp;&nbsp;&nbs~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;
+</span></span><span style='fon~dulla^@204~ ;line-height:150%'>Minimization of
+e~dulla^@204~ culating income, expense, profit and ~dulla^@204~ >
+
+<p class=MsoListParagraphCxSpMid~dulla^@204~ rgin-left:63.0pt;text-indent:-27.0pt;~dulla^@204~ :150%'><span style='font-size:12.0pt;~dulla^@204~ 50%;font-family:
+Symbol'>·<span styl~dulla^@204~  "Times New Roman"'>&nbsp;&nbsp;&nbsp~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&~dulla^@204~ bsp;
+</span></span><span style='font~dulla^@204~ line-height:150%'>Showing inventory
+~dulla^@204~  shop and in store</span></p>
+
+<p c~dulla^@204~ aragraphCxSpMiddle style='margin-left~dulla^@204~ indent:-27.0pt;
+line-height:150%'><s~dulla^@204~ nt-size:12.0pt;line-height:150%;font-~dulla^@204~ ol'>·<span style='font:7.0pt "Times N~dulla^@204~ bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb~dulla^@204~ p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</s~dulla^@204~ pan style='font-size:12.0pt;line-heig~dulla^@204~ mizing error
+in controlling the amou~dulla^@204~ ry level</span></p>
+
+<p class=MsoLi~dulla^@204~ SpMiddle style='margin-left:63.0pt;te~dulla^@204~ .0pt;
+line-height:150%'><span style=~dulla^@204~ .0pt;line-height:150%;font-family:
+S~dulla^@204~  style='font:7.0pt "Times New Roman"'~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&~dulla^@204~ bsp;&nbsp;&nbsp;&nbsp;
+</span></span~dulla^@204~ 'font-size:12.0pt;line-height:150%'>M~dulla^@204~ 
+time needed to search for a product~dulla^@204~ 
+<p class=MsoListParagraphCxSpMiddle~dulla^@204~ n-left:63.0pt;text-indent:-27.0pt;
+l~dulla^@204~ 0%'><span style='font-size:12.0pt;lin~dulla^@204~ ;font-family:
+Symbol'>·<span style='~dulla^@204~ imes New Roman"'>&nbsp;&nbsp;&nbsp;&n~dulla^@204~ sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs~dulla^@204~ ;
+</span></span><span style='font-si~dulla^@204~ e-height:150%'>Provide an
+easy-to-us~dulla^@204~ ace</span></p>
+
+<p class=MsoListPar~dulla^@204~ dle style='margin-left:63.0pt;text-in~dulla^@204~ 
+line-height:150%'><span style='font~dulla^@204~ line-height:150%;font-family:
+Symbol~dulla^@204~ e='font:7.0pt "Times New Roman"'>&nbs~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;
+</span></span><spa~dulla^@204~ -size:12.0pt;line-height:150%'>Data hiding from
+unauthorized employees</span><~dulla^@204~ ss=MsoListParagraphCxSpMiddle style='~dulla^@204~ 3.0pt;text-indent:-27.0pt;
+line-heig~dulla^@204~ n style='font-size:12.0pt;line-height~dulla^@204~ mily:
+Symbol'>·<span style='font:7.0~dulla^@204~  Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbs~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ n></span><span style='font-size:12.0p~dulla^@204~ :150%'>Calculating and
+reporting ite~dulla^@204~ reach their minimum reorder level</sp~dulla^@204~  class=MsoListParagraphCxSpMiddle sty~dulla^@204~ ft:63.0pt;text-indent:-27.0pt;
+line-~dulla^@204~ <span style='font-size:12.0pt;line-he~dulla^@204~ t-family:
+Symbol'>·<span style='font~dulla^@204~  New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ /span></span><span style='font-size:1~dulla^@204~ ight:150%'>Increase customer
+service~dulla^@204~ g fast and reliable service</span></p~dulla^@204~ =MsoListParagraphCxSpMiddle style='ma~dulla^@204~ 0pt;text-indent:-27.0pt;
+line-height~dulla^@204~ style='font-size:12.0pt;line-height:1~dulla^@204~ ly:
+Symbol'>·<span style='font:7.0pt~dulla^@204~ oman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ </span><span style='font-size:12.0pt;~dulla^@204~ 50%'>Minimize theft which
+can be com~dulla^@204~ loyees</span></p>
+
+<p class=MsoList~dulla^@204~ Middle style='margin-left:63.0pt;text~dulla^@204~ pt;
+line-height:150%'><span style='f~dulla^@204~ pt;line-height:150%;font-family:
+Sym~dulla^@204~ tyle='font:7.0pt "Times New Roman"'>&~dulla^@204~ bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb~dulla^@204~ p;&nbsp;&nbsp;&nbsp;
+</span></span><~dulla^@204~ ont-size:12.0pt;line-height:150%'>Gen~dulla^@204~ t
+according to user requirements</sp~dulla^@204~  class=MsoListParagraphCxSpMiddle sty~dulla^@204~ ft:63.0pt;text-indent:-27.0pt;
+line-~dulla^@204~ <span style='font-size:12.0pt;line-he~dulla^@204~ t-family:
+Symbol'>·<span style='font~dulla^@204~  New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ /span></span><span style='font-size:1~dulla^@204~ ight:150%'>Knowing the
+contribution ~dulla^@204~ o the total profit </span></p>
+
+<p ~dulla^@204~ ParagraphCxSpMiddle style='margin-lef~dulla^@204~ -height:150%'><span
+style='font-size~dulla^@204~ height:150%'>&nbsp;</span></p>
+
+<p ~dulla^@204~ ParagraphCxSpLast align=center style=~dulla^@204~ enter;
+text-indent:-18.0pt;line-heig~dulla^@204~ span style='font-size:18.0pt;
+line-h~dulla^@204~ .<span style='font:7.0pt "Times New R~dulla^@204~ &nbsp; </span></span></b><b><u><span~dulla^@204~ size:18.0pt;line-height:150%'>Purpose~dulla^@204~ m</span></u></b></p>
+
+<p class=MsoN~dulla^@204~ text-align:justify;text-indent:22.3pt~dulla^@204~ 
+150%'><span style='font-size:12.0pt~dulla^@204~ 150%'>The purpose of this
+project is~dulla^@204~ ffective software solution to avoid t~dulla^@204~ nual
+system. As a result, the new sy~dulla^@204~ ted to enhance:</span></p>
+
+<p clas~dulla^@204~ tyle='margin-top:0cm;margin-right:0cm~dulla^@204~ m:0cm;
+margin-left:40.3pt;margin-bot~dulla^@204~ ext-align:justify;text-indent:-18.0pt~dulla^@204~ t:150%'><span style='font-size:12.0pt~dulla^@204~ 150%;font-family:
+Wingdings'>§<span ~dulla^@204~ .0pt "Times New Roman"'>&nbsp; </span~dulla^@204~ 
+style='font-size:12.0pt;line-height~dulla^@204~  information retrieval and
+report ge~dulla^@204~ n></p>
+
+<p class=MsoNormal style='m~dulla^@204~ ;margin-right:0cm;margin-bottom:0cm;~dulla^@204~ 40.0pt;margin-bottom:.0001pt;text-ali~dulla^@204~ xt-indent:-18.0pt;
+line-height:150%'~dulla^@204~ 'font-size:12.0pt;line-height:150%;fo~dulla^@204~ ingdings'>§<span style='font:7.0pt "T~dulla^@204~ n"'>&nbsp; </span></span><span
+style~dulla^@204~ 2.0pt;line-height:150%'>Efficiency an~dulla^@204~ cessing
+speed</span></p>
+
+<p class~dulla^@204~ yle='margin-top:0cm;margin-right:0cm;~dulla^@204~ :0cm;
+margin-left:40.0pt;margin-bott~dulla^@204~ xt-align:justify;text-indent:-18.0pt;~dulla^@204~ :150%'><span style='font-size:12.0pt;~dulla^@204~ 50%;font-family:
+Wingdings'>§<span s~dulla^@204~ 0pt "Times New Roman"'>&nbsp; </span>~dulla^@204~ 
+style='font-size:12.0pt;line-height:~dulla^@204~ ating report generation</span></p>
+~dulla^@204~ Normal style='margin-top:0cm;margin-r~dulla^@204~ in-bottom:0cm;
+margin-left:40.0pt;ma~dulla^@204~ 0001pt;text-align:justify;text-indent~dulla^@204~ ne-height:150%'><span style='font-siz~dulla^@204~ -height:150%;font-family:
+Wingdings'~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~ an><span
+style='font-size:12.0pt;lin~dulla^@204~ '>Enhancing information system securi~dulla^@204~ 
+
+<p class=MsoNormal style='margin-~dulla^@204~ n-right:0cm;margin-bottom:0cm;
+margi~dulla^@204~ ;margin-bottom:.0001pt;text-align:jus~dulla^@204~ ent:-18.0pt;
+line-height:150%'><span~dulla^@204~ size:12.0pt;line-height:150%;font-fam~dulla^@204~ gs'>§<span style='font:7.0pt "Times N~dulla^@204~ bsp; </span></span><span
+style='font~dulla^@204~ line-height:150%'>On time ordering of~dulla^@204~ an></p>
+
+<p class=MsoListParagraphC~dulla^@204~ e='line-height:150%'><b><u><span
+sty~dulla^@204~ :4.0pt;line-height:150%'><span style=~dulla^@204~ ion:none'>&nbsp;</span></span></u></b~dulla^@204~ lass=MsoListParagraphCxSpMiddle style~dulla^@204~ :150%'><b><u><span
+style='font-size:~dulla^@204~ ight:150%'><span style='text-decorati~dulla^@204~ p;</span></span></u></b></p>
+
+<p cl~dulla^@204~ ragraphCxSpMiddle style='line-height:~dulla^@204~ span
+style='font-size:4.0pt;line-hei~dulla^@204~ an style='text-decoration:none'>&nbsp~dulla^@204~ n></u></b></p>
+
+<p class=MsoListPar~dulla^@204~ dle style='line-height:150%'><b><u><s~dulla^@204~ ont-size:4.0pt;line-height:150%'><spa~dulla^@204~ -decoration:none'>&nbsp;</span></span~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpMidd~dulla^@204~ e-height:150%'><b><u><span
+style='fo~dulla^@204~ ;line-height:150%'><span style='text-~dulla^@204~ ne'>&nbsp;</span></span></u></b></p>~dulla^@204~ soListParagraphCxSpMiddle style='line~dulla^@204~ ><b><u><span
+style='font-size:4.0pt;~dulla^@204~ 50%'><span style='text-decoration:non~dulla^@204~ an></span></u></b></p>
+
+<p class=Ms~dulla^@204~ hCxSpMiddle style='line-height:150%'>~dulla^@204~ style='font-size:4.0pt;line-height:15~dulla^@204~ le='text-decoration:none'>&nbsp;</spa~dulla^@204~ </b></p>
+
+<p class=MsoListParagraph~dulla^@204~ yle='line-height:150%'><b><u><span
+s~dulla^@204~ ze:4.0pt;line-height:150%'><span styl~dulla^@204~ ation:none'>&nbsp;</span></span></u><~dulla^@204~  class=MsoListParagraphCxSpMiddle sty~dulla^@204~ ht:150%'><b><u><span
+style='font-siz~dulla^@204~ height:150%'><span style='text-decora~dulla^@204~ bsp;</span></span></u></b></p>
+
+<p ~dulla^@204~ ParagraphCxSpMiddle style='line-heigh~dulla^@204~ ><span
+style='font-size:4.0pt;line-h~dulla^@204~ span style='text-decoration:none'>&nb~dulla^@204~ pan></u></b></p>
+
+<p class=MsoListP~dulla^@204~ iddle style='line-height:150%'><b><u>~dulla^@204~ 'font-size:4.0pt;line-height:150%'><s~dulla^@204~ xt-decoration:none'>&nbsp;</span></sp~dulla^@204~ p>
+
+<p class=MsoListParagraphCxSpMi~dulla^@204~ ine-height:150%'><b><u><span
+style='~dulla^@204~ pt;line-height:150%'><span style='tex~dulla^@204~ none'>&nbsp;</span></span></u></b></p~dulla^@204~ =MsoListParagraphCxSpMiddle style='li~dulla^@204~ %'><b><u><span
+style='font-size:4.0p~dulla^@204~ :150%'><span style='text-decoration:n~dulla^@204~ span></span></u></b></p>
+
+<p class=~dulla^@204~ aphCxSpMiddle style='line-height:150%~dulla^@204~ 
+style='font-size:4.0pt;line-height:~dulla^@204~ tyle='text-decoration:none'>&nbsp;</s~dulla^@204~ u></b></p>
+
+<p class=MsoListParagra~dulla^@204~ style='line-height:150%'><b><u><span~dulla^@204~ size:4.0pt;line-height:150%'><span st~dulla^@204~ oration:none'>&nbsp;</span></span></u~dulla^@204~ <p class=MsoListParagraphCxSpMiddle s~dulla^@204~ ight:150%'><b><u><span
+style='font-s~dulla^@204~ e-height:150%'><span style='text-deco~dulla^@204~ &nbsp;</span></span></u></b></p>
+
+<~dulla^@204~ stParagraphCxSpLast align=center styl~dulla^@204~ :center;
+text-indent:-18.0pt;line-height:150%'><b><span style='font-size:18.0p~dulla^@204~ ht:150%'>5.<span style='font:7.0pt "T~dulla^@204~ n"'>&nbsp;&nbsp; </span></span></b><b~dulla^@204~ yle='font-size:18.0pt;line-height:150~dulla^@204~ Limitation</span></u></b></p>
+
+<p c~dulla^@204~ l style='text-align:justify'><span st~dulla^@204~ e:12.0pt;
+line-height:115%'>        ~dulla^@204~  covers the inventory system of Nesro~dulla^@204~ ejat auto spare parts. The service ca~dulla^@204~ s purchasing
+products from different~dulla^@204~ s (suppliers), selling product to cus~dulla^@204~ </p>
+
+<p class=MsoNormal style='tex~dulla^@204~ fy'><span style='font-size:12.0pt;
+l~dulla^@204~ 5%'>        The system will have the ~dulla^@204~ n functions.
+Users will be able to i~dulla^@204~  of products, remove or delete produc~dulla^@204~ roduct information’s. Also request in~dulla^@204~ pplies on a given
+product and inform~dulla^@204~ inimum stock of products. It can prin~dulla^@204~  inventory of supplies, sales report ~dulla^@204~ that should be ordered.</span></p>
+~dulla^@204~ Normal style='text-align:justify'><sp~dulla^@204~ t-size:12.0pt;
+line-height:115%'>   ~dulla^@204~ system will be implemented in a netwo~dulla^@204~ ment that shares one database to chec~dulla^@204~ ry level at each shop
+and in store.<~dulla^@204~ 
+<p class=MsoListParagraph style='mar~dulla^@204~ text-indent:45.0pt;line-height:
+150%~dulla^@204~ ='font-size:12.0pt;line-height:150%'>~dulla^@204~ f limitation
+in time and resources, ~dulla^@204~ will solve problems related to invent~dulla^@204~ management of only two spare parts an~dulla^@204~ ouse.</span></p>
+
+<b><span style='f~dulla^@204~ pt;line-height:115%;font-family:"Cali~dulla^@204~ rif"'><br
+clear=all style='page-brea~dulla^@204~ ys'>
+</span></b>
+
+<p class=MsoNorm~dulla^@204~ er style='text-align:center'><b><span~dulla^@204~ -size:15.0pt;line-height:115%'>&nbsp;~dulla^@204~ p>
+
+<p class=MsoNormal align=center~dulla^@204~ align:center'><b><u><span
+style='fon~dulla^@204~ ;line-height:115%'>Chapter Two</span>~dulla^@204~ 
+
+<p class=MsoNormal align=center st~dulla^@204~ gn:center'><b><u><span
+style='font-s~dulla^@204~ ne-height:115%'>Current System</span>~dulla^@204~ 
+
+<p class=MsoNormal style='line-hei~dulla^@204~              <span
+style='font-size:~dulla^@204~ eight:150%'>First, a list of orders w~dulla^@204~ by the salesperson. These orders are ~dulla^@204~ by walking around the shelves
+and ma~dulla^@204~ items which the salesperson thought t~dulla^@204~  ordered. Order
+can also be made by ~dulla^@204~ ock card which have reached their min~dulla^@204~  This process is an old fashion which~dulla^@204~  consuming and makes
+the lead time t~dulla^@204~ e items which are to be ordered are l~dulla^@204~ anized
+using Microsoft Excel applica~dulla^@204~ .</span></p>
+
+<p class=MsoNormal st~dulla^@204~ ght:150%'><span style='font-size:12.0~dulla^@204~ ght:150%'>            After products ~dulla^@204~ ered and brought from
+the supplier, ~dulla^@204~ contains the purchased products usual~dulla^@204~ of
+purchase invoice will be a base f~dulla^@204~  price. When the purchased products
+~dulla^@204~ e custom service, they are directly t~dulla^@204~ arehouse so that
+counting of the rec~dulla^@204~  will take place. Distribution of the~dulla^@204~ e two shops and which are to be kept ~dulla^@204~ are identified. Price
+setting of the~dulla^@204~  takes place here. The items in shop ~dulla^@204~ 
+recorded on a stock card. This stoc~dulla^@204~ t in the shop where the
+respective i~dulla^@204~ d.</span></p>
+
+<p class=MsoNormal s~dulla^@204~ ight:150%'><span style='font-size:12.~dulla^@204~ ight:150%'>            Once item reac~dulla^@204~ d recorded on the
+stock card, items ~dulla^@204~ e same function but a part of differe~dulla^@204~ are usually placed together in the sa~dulla^@204~ se shelves have a sticker tagged
+on ~dulla^@204~ the salesperson can easily identify i~dulla^@204~ nt.</span></p>
+
+<p class=MsoNormal ~dulla^@204~ style='text-align:center;line-height:~dulla^@204~ n
+style='font-size:14.0pt;line-heigh~dulla^@204~ o sales occur?</span></b></p>
+
+<p c~dulla^@204~ l style='line-height:150%'>          ~dulla^@204~  <span
+style='font-size:12.0pt;line-~dulla^@204~ the salesperson tries to memorize
+it~dulla^@204~  found in the shop .When a customer c~dulla^@204~ for a certain
+product, it is difficu~dulla^@204~ spot out the product. All items have ~dulla^@204~ ique part numbers therefore, the sale~dulla^@204~  to identify by
+thinking weather he ~dulla^@204~ ms in his shop or not. They also try ~dulla^@204~ ms which are in the shop by looking a~dulla^@204~ ook for searching the
+requested item~dulla^@204~ mer. The salesperson don’t have any c~dulla^@204~ anism of requested items for the pres~dulla^@204~ roduct on the shelf .Because,
+that i~dulla^@204~ ady been sold but the stock book show~dulla^@204~ items
+which are purchased and new ar~dulla^@204~ n different papers or pages. To know~dulla^@204~ e salesperson tries to locate the pro~dulla^@204~ helf and reply
+the request of the cu~dulla^@204~ hole process is very time consuming a~dulla^@204~  to customer dissatisfaction.</span><~dulla^@204~ ss=MsoNormal style='text-indent:36.0p~dulla^@204~ :150%'><span
+style='font-size:12.0pt~dulla^@204~ 150%'>When the sales occur, the cashi~dulla^@204~ a receipt to the customer and also wr~dulla^@204~ ook which contains
+daily sales (sale~dulla^@204~ . This book is also a base to deduct ~dulla^@204~ ems which are written on the stock ca~dulla^@204~ ecific item and it is
+presented to t~dulla^@204~  show daily sales. To know the availa~dulla^@204~ 
+level, the manager looks at the inv~dulla^@204~ hich contains part number,
+quantity,~dulla^@204~ a specific product. Summations of the~dulla^@204~  the
+month are done manually for the~dulla^@204~ onthly tax.</span></p>
+
+<p class=Ms~dulla^@204~ =center style='text-align:center;line~dulla^@204~ ><b><span
+style='font-size:14.0pt;li~dulla^@204~ %'>Setting price</span></b></p>
+
+<p~dulla^@204~ mal style='text-align:justify;text-in~dulla^@204~ ine-height:
+150%'><span style='font-~dulla^@204~ ine-height:150%'>For the settlement o~dulla^@204~  purchase price is taken into conside~dulla^@204~ overnment also
+imposes different tax~dulla^@204~ ax amount that should be paid by the ~dulla^@204~ anizations. Additional cost like cost~dulla^@204~ ation and different
+miscellaneous ex~dulla^@204~ e person who went to the supplier’s c~dulla^@204~ aken into consideration. Other costs ~dulla^@204~ ll, fax expenses, freight of
+the imp~dulla^@204~ nd some other miscellaneous cost are ~dulla^@204~ 
+calculation of the total expenses. ~dulla^@204~ s are summed up together and
+make a ~dulla^@204~  these expenses can be added upon the~dulla^@204~ e sold.
+The three type of taxes used~dulla^@204~  custom tax, and sur tax.</span></p>~dulla^@204~ soNormal style='text-indent:36.0pt;li~dulla^@204~ %'><span
+style='font-size:12.0pt;lin~dulla^@204~ '>These taxes are uniform. There are~dulla^@204~ hat differ from one product to anothe~dulla^@204~ g up all expenses
+together and distr~dulla^@204~ ually throughout the product do not l~dulla^@204~ xact amount of unit cost of the item.~dulla^@204~  different items weight
+differently.~dulla^@204~ e total freight to the entire product~dulla^@204~ w
+the exact cost. It should be done ~dulla^@204~  according to the weight it
+should b~dulla^@204~ fter the difficult calculations are d~dulla^@204~ a
+certain profit margin will be set ~dulla^@204~ ed all across the product.</span></p>~dulla^@204~ 
+<b><span style='font-size:19.0pt;lin~dulla^@204~ ;font-family:"Calibri","sans-serif"'>~dulla^@204~ l style='page-break-before:always'>
+~dulla^@204~ 
+<div class=Section2>
+
+<p class=Ms~dulla^@204~ =center style='text-align:center'><b>~dulla^@204~ le='font-size:20.0pt;line-height:115%~dulla^@204~ ee</span></u></b></p>
+
+<p class=Mso~dulla^@204~ center style='text-align:center'><b><~dulla^@204~ e='font-size:20.0pt;line-height:115%'~dulla^@204~ sis</span></u></b></p>
+
+<p class=Ms~dulla^@204~ hCxSpFirst style='margin-left:54.0pt;~dulla^@204~ 18.0pt;
+line-height:150%'><b><span style='font-size:16.0pt;line-height:150%'>1~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~  </span></span></b><b><span
+style='f~dulla^@204~ pt;line-height:150%'>Process model (D~dulla^@204~ rams)</span></b></p>
+
+<p class=MsoL~dulla^@204~ xSpLast style='margin-left:7.1pt;line~dulla^@204~ ><b><u><span
+style='font-size:12.0pt~dulla^@204~ 150%'><img width=849 height=463
+src=~dulla^@204~ mage001.jpg" alt="Context Diagram.jpg~dulla^@204~ </b></p>
+
+</div>
+
+<b><u><span sty~dulla^@204~ :12.0pt;line-height:150%;font-family:~dulla^@204~ ns-serif"'><br
+clear=all style='page~dulla^@204~ :always'>
+</span></u></b>
+
+<div cl~dulla^@204~ 
+
+<p class=MsoNormal style='line-he~dulla^@204~ mg width=624 height=841
+id="Picture ~dulla^@204~ files/image002.jpg" alt="Level 0 Diag~dulla^@204~ 
+
+<p class=MsoNormal style='line-he~dulla^@204~ mg width=618 height=864
+id="Picture ~dulla^@204~ files/image003.jpg" alt="Level 1 Diag~dulla^@204~ 
+
+<p class=MsoListParagraph align=c~dulla^@204~ margin-left:54.0pt;text-align:
+cente~dulla^@204~ :-18.0pt'><b><span style='font-size:2~dulla^@204~ ight:115%'>2.<span
+style='font:7.0pt~dulla^@204~ oman"'>&nbsp; </span></span></b><b><s~dulla^@204~ ont-size:20.0pt;line-height:115%'>Pro~dulla^@204~ pan></b></p>
+
+<p class=MsoNormal st~dulla^@204~ ent:36.0pt;line-height:150%'><span
+s~dulla^@204~ ze:12.0pt;line-height:150%'>Process l~dulla^@204~ tured English
+is a modified form of ~dulla^@204~ is used to specify the content of pro~dulla^@204~ n a Data Flow Diagram (DFD). It uses ~dulla^@204~ nglish vocabularies to
+express infor~dulla^@204~  process procedures. [Valacich, Georg~dulla^@204~ 4,
+174]</span></p>
+
+<p class=MsoNo~dulla^@204~ ext-indent:36.0pt;line-height:150%'><~dulla^@204~ font-size:12.0pt;line-height:150%'>Ba~dulla^@204~ vel 1 DFD, we can
+develop a process ~dulla^@204~ ows how the proposed system will work~dulla^@204~ 
+
+<p class=MsoNormal><span style='fo~dulla^@204~ t;line-height:115%'>DO</span></p>
+
+~dulla^@204~ ormal style='text-indent:36.0pt'><spa~dulla^@204~ -size:12.0pt;
+line-height:115%'>READ~dulla^@204~ e </span></p>
+
+<p class=MsoNormal><~dulla^@204~ ont-size:12.0pt;line-height:115%'>   ~dulla^@204~         BEGIN
+IF </span></p>
+
+<p c~dulla^@204~ l style='margin-left:72.0pt;text-inde~dulla^@204~ pan
+style='font-size:12.0pt;line-hei~dulla^@204~ Quantity equals Ordered quantity</spa~dulla^@204~ class=MsoNormal style='margin-left:36~dulla^@204~ ent:36.0pt'><span
+style='font-size:1~dulla^@204~ ight:115%'>                        UP~dulla^@204~ s table</span></p>
+
+<p class=MsoNor~dulla^@204~ rgin-left:36.0pt;text-indent:36.0pt'>~dulla^@204~ 'font-size:12.0pt;line-height:115%'> ~dulla^@204~           MOVE Products
+to different~dulla^@204~ </p>
+
+<p class=MsoNormal style='mar~dulla^@204~ pt;text-indent:36.0pt'><span
+style='~dulla^@204~ 0pt;line-height:115%'>               ~dulla^@204~ TE
+Inventory Level</span></p>
+
+<p ~dulla^@204~ al style='margin-left:36.0pt;text-ind~dulla^@204~ span
+style='font-size:12.0pt;line-he~dulla^@204~                       GENERATE
+Repor~dulla^@204~ 
+
+<p class=MsoNormal><span style='f~dulla^@204~ pt;line-height:115%'>                ~dulla^@204~        ELSE</span></p>
+
+<p class=Ms~dulla^@204~  style='font-size:12.0pt;line-height:~dulla^@204~                                      ~dulla^@204~ ng</span></p>
+
+<p class=MsoNormal><~dulla^@204~ ont-size:12.0pt;line-height:115%'>   ~dulla^@204~         END
+IF</span></p>
+
+<p clas~dulla^@204~ span style='font-size:12.0pt;line-hei~dulla^@204~ IL
+End-of-file</span></p>
+
+<p clas~dulla^@204~ span style='font-size:12.0pt;line-hei~dulla^@204~ sp;</span></p>
+
+<p class=MsoNormal>~dulla^@204~ font-size:12.0pt;line-height:115%'>DO~dulla^@204~ 
+<p class=MsoNormal><span style='fon~dulla^@204~ ;line-height:115%'>            READ
+~dulla^@204~ r            </span></p>
+
+<p class=~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~                    BEGIN
+IF</span></~dulla^@204~ s=MsoNormal><span style='font-size:12~dulla^@204~ ght:115%'>                           ~dulla^@204~ Ordered-Quantity is less than Availab~dulla^@204~ span></p>
+
+<p class=MsoNormal><span~dulla^@204~ size:12.0pt;line-height:115%'>       ~dulla^@204~                             SALE
+Pro~dulla^@204~ /p>
+
+<p class=MsoNormal><span style~dulla^@204~ 2.0pt;line-height:115%'>             ~dulla^@204~                       UPDATE
+Sales T~dulla^@204~ specific shop</span></p>
+
+<p class=~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~                                      ~dulla^@204~ 
+Inventory Level</span></p>
+
+<p cla~dulla^@204~ <span style='font-size:12.0pt;line-he~dulla^@204~                                      ~dulla^@204~ RATE
+Reports</span></p>
+
+<p class=~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~                                ELSE
+~dulla^@204~ 
+
+<p class=MsoNormal><span style='f~dulla^@204~ pt;line-height:115%'>                ~dulla^@204~                    CHECK
+IF Product ~dulla^@204~ in the other shop and in store</span>~dulla^@204~ ass=MsoNormal><span style='font-size:~dulla^@204~ eight:115%'>                         ~dulla^@204~                       SALE
+Products<~dulla^@204~ 
+<p class=MsoNormal><span style='font~dulla^@204~ line-height:115%'>                   ~dulla^@204~                             UPDATE
+S~dulla^@204~  that specific shop</span></p>
+
+<p ~dulla^@204~ al><span style='font-size:12.0pt;line~dulla^@204~ >                                    ~dulla^@204~            UPDATE
+Inventory Level</s~dulla^@204~ p class=MsoNormal><span style='font-s~dulla^@204~ ne-height:115%'>                     ~dulla^@204~                           GENERATE
+R~dulla^@204~ </p>
+
+<p class=MsoNormal><span styl~dulla^@204~ 12.0pt;line-height:115%'>            ~dulla^@204~            ELSE     </span></p>
+
+<p~dulla^@204~ mal><span style='font-size:12.0pt;lin~dulla^@204~ '>                                   ~dulla^@204~ REFUSE
+Order</span></p>
+
+<p class=~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~                                      ~dulla^@204~ roduct information to Order table</sp~dulla^@204~  class=MsoNormal><span style='font-si~dulla^@204~ e-height:115%'>                      ~dulla^@204~ an></p>
+
+<p class=MsoNormal><span s~dulla^@204~ ze:12.0pt;line-height:115%'>UNTIL
+En~dulla^@204~ an></p>
+
+<p class=MsoNormal align=c~dulla^@204~ margin-left:22.5pt;text-align:center;~dulla^@204~ :150%'><b><u><span style='font-size:1~dulla^@204~ ight:150%'><span
+ style='text-decora~dulla^@204~ bsp;</span></span></u></b></p>
+
+<p ~dulla^@204~ al align=center style='margin-left:22~dulla^@204~ gn:center;
+line-height:150%'><b><u><~dulla^@204~ ont-size:20.0pt;line-height:150%'><sp~dulla^@204~ ext-decoration:none'>&nbsp;</span></s~dulla^@204~ /p>
+
+<p class=MsoNormal align=cente~dulla^@204~ in-left:22.5pt;text-align:center;
+li~dulla^@204~ %'><b><u><span style='font-size:20.0p~dulla^@204~ :150%'><span
+ style='text-decoration~dulla^@204~ </span></span></u></b></p>
+
+<p clas~dulla^@204~ lign=center style='margin-left:22.5pt~dulla^@204~ enter;
+line-height:150%'><b><u><span~dulla^@204~ size:20.0pt;line-height:150%'><span
+~dulla^@204~ decoration:none'>&nbsp;</span></span>~dulla^@204~ 
+
+<p class=MsoNormal align=center st~dulla^@204~ eft:22.5pt;text-align:center;
+line-h~dulla^@204~ b><u><span style='font-size:20.0pt;li~dulla^@204~ %'><span
+ style='text-decoration:non~dulla^@204~ an></span></u></b></p>
+
+<p class=Ms~dulla^@204~ =center style='margin-left:22.5pt;tex~dulla^@204~ r;
+line-height:150%'><b><u><span sty~dulla^@204~ :20.0pt;line-height:150%'><span
+ sty~dulla^@204~ ration:none'>&nbsp;</span></span></u>~dulla^@204~ p class=MsoNormal align=center style=~dulla^@204~ 22.5pt;text-align:center;
+line-heigh~dulla^@204~ ><span style='font-size:20.0pt;line-h~dulla^@204~ hapter
+Four</span></u></b></p>
+
+<p~dulla^@204~ mal align=center style='margin-left:2~dulla^@204~ ign:center;
+line-height:150%'><b><u>~dulla^@204~ font-size:20.0pt;line-height:150%'>Pr~dulla^@204~ m</span></u></b></p>
+
+<p class=MsoN~dulla^@204~ text-align:justify;line-height:150%'>                     
+To make an order of~dulla^@204~ t are low in quantity, in the current~dulla^@204~ salesperson will have to look through~dulla^@204~ ucts available in store
+shelves and ~dulla^@204~ s that reach their reordering quantit~dulla^@204~ 
+proposed system, since after implem~dulla^@204~ products that are kept in
+shelves wi~dulla^@204~ r perspective tables and for ordering~dulla^@204~ t are
+low in quantity, all salespers~dulla^@204~  is, ask the system to prepare a repo~dulla^@204~ ts that reach their reordering quanti~dulla^@204~  to be ordered. 
+This is done throug~dulla^@204~ that every product will have minimum ~dulla^@204~ must be available i.e. Reorder Quanti~dulla^@204~ nt will be registered
+with the produ~dulla^@204~ ion. When the currently available amo~dulla^@204~ he
+minimum amount, the products info~dulla^@204~ be entered to another table that keep~dulla^@204~ products to be ordered. Whenever the ~dulla^@204~ ants to order,
+he/she will be presen~dulla^@204~ port. This new feature saves time and~dulla^@204~ well organized purchase order.</p>
+~dulla^@204~ Normal style='text-align:justify;text~dulla^@204~ t;line-height:
+150%'>When products a~dulla^@204~  they are first taken to store and to~dulla^@204~ ed.
+They all have a part number that~dulla^@204~ y each product. Minimum price will
+a~dulla^@204~ ated for each product considering the~dulla^@204~ ce, costs
+(transportation, storage, ~dulla^@204~ icity and telephone), and different k~dulla^@204~  including VAT, sur tax, and custom t~dulla^@204~ ucts will be
+distributed to shops ba~dulla^@204~ mber of customers expected. The produ~dulla^@204~ r the table in a database (employee u~dulla^@204~ rface to the
+database) and placed in~dulla^@204~ on the shelves. This makes it easy fo~dulla^@204~ a given product in the shop and how m~dulla^@204~ is available in the
+other shop and i~dulla^@204~ 
+
+<p class=MsoNormal style='text-ali~dulla^@204~ xt-indent:36.0pt;line-height:
+150%'>~dulla^@204~  of the networking capabilities of th~dulla^@204~ ny
+authorized person can check the l~dulla^@204~ tory in store and in the shops
+for a~dulla^@204~ uct.  There will be high security so ~dulla^@204~ ized person
+cannot change any data. ~dulla^@204~ theft which could have been done by
+~dulla^@204~ >
+
+<p class=MsoNormal style='text-a~dulla^@204~ text-indent:36.0pt;line-height:
+150%~dulla^@204~ omer asks for a certain product, ther~dulla^@204~ to refer big
+book or search it on th~dulla^@204~ oking around, the salesperson can eas~dulla^@204~ e products part number or name to fin~dulla^@204~ product is on hand,
+how much is avai~dulla^@204~ which shelf it is found. This increas~dulla^@204~ satisfaction by providing fast servic~dulla^@204~ cilitates communication and
+coordina~dulla^@204~ employees of different branch. The sa~dulla^@204~ l also
+have information about how mu~dulla^@204~  in store or in the other shop if the~dulla^@204~  a specific shop are not enough.  And~dulla^@204~ will occurs, it
+will affect attribut~dulla^@204~ ducts, like deducting the quantity of~dulla^@204~  by the amount sold, recording the am~dulla^@204~ ue and this will be
+used in the repo~dulla^@204~ daily activities of the shop. But if ~dulla^@204~ 
+product that has been requested is ~dulla^@204~ the amount in the shop, then
+the sal~dulla^@204~ l also try to see if the product is i~dulla^@204~ r in the
+other shop. If not, the sal~dulla^@204~  send the product to reordering repor~dulla^@204~ p class=MsoNormal style='text-align:j~dulla^@204~ ndent:36.0pt;line-height:
+150%'>When~dulla^@204~  pays, this will be registered in the~dulla^@204~ able. But,
+if the items are sold on ~dulla^@204~ l be registered in credit sales table~dulla^@204~ stem will shows debits whose due date~dulla^@204~ From this table, we can
+get reports ~dulla^@204~ ly sales on cash and on credit, daily~dulla^@204~ 
+reorder level and tax amounts of eac~dulla^@204~ p>
+
+<p class=MsoNormal style='text-~dulla^@204~ ;text-indent:36.0pt;line-height:
+150~dulla^@204~ ormation about the profit of the orga~dulla^@204~ other
+sensitive information is also ~dulla^@204~  different user interfaces presented~dulla^@204~  protected logins.</p>
+
+<p class=Ms~dulla^@204~ ='text-align:justify;text-indent:36.0~dulla^@204~ t:
+150%'>The new program can also mi~dulla^@204~ when inventory counting is done.
+Bec~dulla^@204~ check how many items we initially bou~dulla^@204~ any we sold
+from the tables in the d~dulla^@204~ 
+
+<p class=MsoNormal style='text-ali~dulla^@204~ xt-indent:36.0pt;line-height:
+150%'>~dulla^@204~ nefit that can be generated from the ~dulla^@204~ cludes
+increase employees’ motivatio~dulla^@204~ heir job a lot more interesting.</p>~dulla^@204~ soNormal style='text-align:justify;li~dulla^@204~ %'>&nbsp;</p>
+
+<p class=MsoNormal s~dulla^@204~ ign:justify;line-height:150%'>&nbsp;<~dulla^@204~ ss=MsoNormal style='text-align:justif~dulla^@204~ :150%'>&nbsp;</p>
+
+<p class=MsoNorm~dulla^@204~ t-align:justify;line-height:150%'>&nb~dulla^@204~  class=MsoNormal style='text-align:ju~dulla^@204~ ight:150%'>&nbsp;</p>
+
+<p class=Mso~dulla^@204~ 'text-align:justify;line-height:150%'~dulla^@204~ 
+<p class=MsoNormal style='text-alig~dulla^@204~ e-height:150%'>&nbsp;</p>
+
+<p class~dulla^@204~ yle='text-align:justify;line-height:1~dulla^@204~ p>
+
+<p class=MsoListParagraph align~dulla^@204~ ='text-align:center;text-indent:
+-18~dulla^@204~ ght:150%'><b><span style='font-size:2~dulla^@204~ ight:150%'>1.<span
+style='font:7.0pt~dulla^@204~ oman"'>&nbsp; </span></span></b><b><s~dulla^@204~ ont-size:20.0pt;line-height:150%'>Fun~dulla^@204~ rements</span></b></p>
+
+<p class=Ms~dulla^@204~ ='text-align:justify;text-indent:36.0~dulla^@204~ t:
+150%'><span style='font-size:12.0~dulla^@204~ t:150%'>The functional
+requirements ~dulla^@204~ ing the daily operational problems by~dulla^@204~ to
+the employees and providing effec~dulla^@204~ cient service to the customers.
+The ~dulla^@204~ quirement of the Inventory control sy~dulla^@204~ :</span></p>
+
+<ul style='margin-top~dulla^@204~ sc>
+ <li class=MsoNormal style='marg~dulla^@204~ ;margin-bottom:.0001pt;text-align:
+ ~dulla^@204~ ine-height:150%'><span style='font-si~dulla^@204~ e-height:150%'>Recording
+     purcha~dulla^@204~ /span></li>
+ <li class=MsoNormal sty~dulla^@204~ ttom:0cm;margin-bottom:.0001pt;text-a~dulla^@204~ ustify;line-height:150%'><span style=~dulla^@204~ .0pt;line-height:150%'>Providing
+   ~dulla^@204~ inds of reports whenever required</sp~dulla^@204~ i class=MsoNormal style='margin-botto~dulla^@204~ bottom:.0001pt;text-align:
+     just~dulla^@204~ ht:150%'><span style='font-size:12.0p~dulla^@204~ :150%'>Reporting
+     products that ~dulla^@204~ ed when their reorder point reaches</~dulla^@204~ <li class=MsoNormal style='margin-bot~dulla^@204~ n-bottom:.0001pt;text-align:
+     ju~dulla^@204~ ight:150%'><span style='font-size:12.~dulla^@204~ ht:150%'>Reporting
+     level of inv~dulla^@204~ ps and in store</span></li>
+ <li cla~dulla^@204~ style='margin-bottom:0cm;margin-botto~dulla^@204~ t-align:
+     justify;line-height:15~dulla^@204~ le='font-size:12.0pt;line-height:150%~dulla^@204~      for a specific product</span></l~dulla^@204~ s=MsoNormal style='margin-bottom:0cm;~dulla^@204~ :.0001pt;text-align:
+     justify;li~dulla^@204~ %'><span style='font-size:12.0pt;line~dulla^@204~ >Price
+     setting and profit calcu~dulla^@204~ ></li>
+ <li class=MsoNormal style='m~dulla^@204~ 0cm;margin-bottom:.0001pt;text-align:~dulla^@204~ y;line-height:150%'><span style='font~dulla^@204~ line-height:150%'>Distributing
+     ~dulla^@204~  products to the  two branch shops us~dulla^@204~  strategies</span></li>
+</ul>
+
+<p ~dulla^@204~ al style='margin-bottom:0cm;margin-bo~dulla^@204~ text-align:
+justify;line-height:150%~dulla^@204~ ='font-size:12.0pt;line-height:150%'>~dulla^@204~ </p>
+
+<p class=MsoNormal style='mar~dulla^@204~ m;margin-bottom:.0001pt;text-align:
+~dulla^@204~ height:150%'>&nbsp;</p>
+
+<p class=M~dulla^@204~ e='margin-bottom:0cm;margin-bottom:.0~dulla^@204~ ign:
+justify;line-height:150%'>&nbsp~dulla^@204~ lass=MsoListParagraph align=center style='text-align:center;text-indent:
+-18.0~dulla^@204~ t:150%'><b><span style='font-size:20.~dulla^@204~ ht:150%'>2.<span
+style='font:7.0pt "~dulla^@204~ an"'>&nbsp; </span></span></b><b><u><~dulla^@204~ font-size:20.0pt;line-height:150%'>No~dulla^@204~ Requirements</span></u></b></p>
+
+<p~dulla^@204~ mal style='text-align:justify;text-in~dulla^@204~ ine-height:
+150%'><span style='font-~dulla^@204~ ine-height:150%'>The non functional
+~dulla^@204~ deals with the quality of the applica~dulla^@204~ needed to be developed
+from differen~dulla^@204~ point of view like the response time ~dulla^@204~ cation to a given user queries, the u~dulla^@204~ ess of the application,
+the security~dulla^@204~ m in safeguarding unauthorized access~dulla^@204~ m
+and others.</span></p>
+
+<p class~dulla^@204~ raph style='margin-bottom:0cm;margin-~dulla^@204~ t;
+text-align:justify;text-indent:-1~dulla^@204~ ight:150%'><b><span
+style='font-size~dulla^@204~ height:150%'>1.<span style='font:7.0p~dulla^@204~ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</s~dulla^@204~ b><b><span style='font-size:14.0pt;li~dulla^@204~ %'>Graphical
+user interface</span></~dulla^@204~ class=MsoNormal style='text-align:jus~dulla^@204~ ent:36.0pt;line-height:
+150%'><span ~dulla^@204~ ize:12.0pt;line-height:150%'>User int~dulla^@204~ 
+iterative technique in which users a~dulla^@204~ nvolved in identifying the
+user inte~dulla^@204~  system. </span></p>
+
+<p class=MsoN~dulla^@204~ text-align:justify;text-indent:36.0pt~dulla^@204~ 
+150%'><span style='font-size:12.0pt~dulla^@204~ 150%'>A software application
+will be~dulla^@204~ ing Visual Basic.net 2005 to ease use~dulla^@204~  with the
+computer.</span></p>
+
+<p~dulla^@204~ mal style='text-align:justify;text-in~dulla^@204~ ine-height:
+150%'>&nbsp;</p>
+
+<p s~dulla^@204~ top:0cm;margin-right:0cm;margin-botto~dulla^@204~ left:36.0pt;
+margin-bottom:.0001pt;t~dulla^@204~ 8.0pt;line-height:150%'><b><span
+sty~dulla^@204~ :14.0pt;line-height:150%;font-family:~dulla^@204~ ns-serif";
+letter-spacing:-1.25pt'>2~dulla^@204~ 'font:7.0pt "Times New Roman"'>&nbsp;~dulla^@204~ n></b><b><span
+style='font-size:14.0~dulla^@204~ t:150%;font-family:"Calibri","sans-se~dulla^@204~ -spacing:-1.25pt'>Documentation</span~dulla^@204~ <p class=MsoNormal style='text-align:~dulla^@204~ indent:35.45pt;line-height:
+150%'><s~dulla^@204~ nt-size:12.0pt;line-height:150%'>Full~dulla^@204~ n of the
+preliminary investigation, ~dulla^@204~ is and design documents will be
+comp~dulla^@204~ ce future reference and system mainte~dulla^@204~ s, the
+system supports online help t~dulla^@204~  user in smoothly using the
+applicat~dulla^@204~ p>
+
+<p style='margin-top:0cm;margin~dulla^@204~ rgin-bottom:0cm;margin-left:36.0pt;
+~dulla^@204~ :.0001pt;text-indent:-18.0pt;line-hei~dulla^@204~ <span
+style='font-size:14.0pt;line-h~dulla^@204~ nt-family:"Calibri","sans-serif"'>3.<~dulla^@204~ font:7.0pt "Times New Roman"'>&nbsp;&~dulla^@204~ bsp; </span></span></b><b><span
+styl~dulla^@204~ 14.0pt;line-height:150%;font-family:"~dulla^@204~ s-serif";
+letter-spacing:-1.25pt'>Ha~dulla^@204~ erations</span></b></p>
+
+<p style='~dulla^@204~ rgin-bottom:.0001pt;line-height:150%'~dulla^@204~ ='font-family:"Calibri","sans-serif"'~dulla^@204~   </span><span
+style='font-family:"C~dulla^@204~ -serif"'>The system needs to have one~dulla^@204~ ine for central storage and manipulat~dulla^@204~ t records. Four personal
+computers, ~dulla^@204~ anager, one for the stock keeper and ~dulla^@204~ o for
+the salesperson are also requi~dulla^@204~ /p>
+
+<p style='margin:0cm;margin-bo~dulla^@204~ line-height:150%'><span
+style='font-~dulla^@204~ ne-height:150%;font-family:"Calibri",~dulla^@204~ >&nbsp;</span></p>
+
+<p class=MsoNor~dulla^@204~ ne-height:150%'><span style='font-siz~dulla^@204~ ne-height:150%'>            In additi~dulla^@204~ chines, i.e. personal
+computers and ~dulla^@204~ ould have Network Interface Card (NIC~dulla^@204~ 
+be a need for a printer for printin~dulla^@204~ ne regulator (UPS) to have
+uninterru~dulla^@204~ supply is also recommended. </span></~dulla^@204~ s=MsoListParagraph style='text-align:~dulla^@204~ indent:-18.0pt;
+line-height:150%'><b~dulla^@204~ 'font-size:14.0pt;line-height:150%'>4~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~ &nbsp; </span></span></b><b><span
+st~dulla^@204~ e:14.0pt;line-height:150%'>Software</~dulla^@204~ 
+
+<p class=MsoNormal style='line-he~dulla^@204~ ><span style='font-size:14.0pt;
+line~dulla^@204~ >Application software required for im~dulla^@204~ /span></u></p>
+
+<p class=MsoNormal ~dulla^@204~ eight:150%'>                <span
+st~dulla^@204~ e:12.0pt;line-height:150%'>When the s~dulla^@204~ emented, Windows
+2003 Server operati~dulla^@204~  the server and Windows XP profession~dulla^@204~ for the workstations are recommended ~dulla^@204~ span></p>
+
+<p class=MsoNormal style~dulla^@204~ :150%'><u><span style='font-size:14.0~dulla^@204~ ght:150%'>System development tools</s~dulla^@204~ 
+
+<p class=MsoNormal style='line-hei~dulla^@204~              <span
+style='font-size:~dulla^@204~ eight:150%'>One of Microsoft Visual S~dulla^@204~ 05’s products, Visual Basic.net progr~dulla^@204~ ge compiler for coding and
+for datab~dulla^@204~ t, Microsoft SQL 2000 server and crys~dulla^@204~ r the
+reporting are used.</span></p>~dulla^@204~ MsoNormal style='text-align:justify;t~dulla^@204~ .0pt;line-height:
+150%'><span style=~dulla^@204~ .0pt;line-height:150%'>The database a~dulla^@204~ e expansion that may arise in the ope~dulla^@204~  spare part and
+enhancements that ma~dulla^@204~  in the program. This flexibility pri~dulla^@204~  more technical feasibility to the sy~dulla^@204~ /p>
+
+<p class=MsoNormal style='line~dulla^@204~ >&nbsp;</p>
+
+<p style='margin-top:0~dulla^@204~ ht:0cm;margin-bottom:0cm;margin-left:~dulla^@204~ in-bottom:.0001pt;text-indent:-18.0pt~dulla^@204~ 150%'><b><span
+style='font-size:14.0~dulla^@204~ t:150%;font-family:"Calibri","sans-se~dulla^@204~ -spacing:-1.25pt'>5.<span style='font~dulla^@204~  New Roman"'>&nbsp; </span></span></b~dulla^@204~ yle='font-size:14.0pt;line-height:150~dulla^@204~ :"Calibri","sans-serif";
+letter-spac~dulla^@204~ Quality issues</span></b></p>
+
+<p s~dulla^@204~ 0cm;margin-bottom:.0001pt;text-align:~dulla^@204~ indent:35.45pt;
+line-height:150%'><s~dulla^@204~ nt-family:"Calibri","sans-serif"'>The~dulla^@204~ the system is measured in terms of th~dulla^@204~ the output it produces.
+The system g~dulla^@204~  organized and designed reports as co~dulla^@204~ 
+prior manually prepared reports. Th~dulla^@204~  have also the capability of
+handlin~dulla^@204~ t would have a significant effect on ~dulla^@204~ rational
+activities. </span></p>
+
+~dulla^@204~ gin:0cm;margin-bottom:.0001pt;text-al~dulla^@204~ ext-indent:35.45pt;
+line-height:150%~dulla^@204~ ='font-family:"Calibri","sans-serif"'~dulla^@204~ 
+used wherever the program might nee~dulla^@204~ ed or when new things are used.</span~dulla^@204~ lass=MsoNormal style='line-height:150~dulla^@204~       <span
+style='font-size:12.0pt;~dulla^@204~ 50%'>For the development of the new s~dulla^@204~ ll use Visual Basic.net 2005 because ~dulla^@204~ ct-oriented programming
+language. So~dulla^@204~ efits of object orientation include: ~dulla^@204~ 
+<p class=MsoNormal style='margin-to~dulla^@204~ right:0cm;margin-bottom:0cm;
+margin-~dulla^@204~ argin-bottom:.0001pt;text-indent:-18.~dulla^@204~ ht:150%'><span
+style='font-size:12.0~dulla^@204~ t:150%;font-family:Symbol'>·<span
+st~dulla^@204~ pt "Times New Roman"'>&nbsp;&nbsp;&nb~dulla^@204~ p;&nbsp;&nbsp;&nbsp;
+</span></span><~dulla^@204~ ont-size:12.0pt;line-height:150%'>Sho~dulla^@204~ ment life cycle</span></p>
+
+<p clas~dulla^@204~ tyle='margin-top:0cm;margin-right:0cm~dulla^@204~ m:0cm;
+margin-left:36.0pt;margin-bot~dulla^@204~ ext-indent:-18.0pt;line-height:150%'>~dulla^@204~ 'font-size:12.0pt;line-height:150%;fo~dulla^@204~ bol'>·<span
+style='font:7.0pt "Times~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&~dulla^@204~ </span></span><span style='font-size:~dulla^@204~ eight:150%'>Cost reductions
+in syste~dulla^@204~ </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin~dulla^@204~ 
+margin-left:36.0pt;margin-bottom:.00~dulla^@204~ ent:-18.0pt;line-height:150%'><span
+~dulla^@204~ ize:12.0pt;line-height:150%;font-fami~dulla^@204~ span
+style='font:7.0pt "Times New Ro~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ </span><span style='font-size:12.0pt;~dulla^@204~ 50%'>Language
+integration as a resul~dulla^@204~ ommunication between different stages~dulla^@204~ ent</span></p>
+
+<p class=MsoNormal ~dulla^@204~ -top:0cm;margin-right:0cm;margin-bott~dulla^@204~ in-left:36.0pt;margin-bottom:.0001pt;~dulla^@204~ 18.0pt;line-height:150%'><span
+style~dulla^@204~ 2.0pt;line-height:150%;font-family:Sy~dulla^@204~ 
+style='font:7.0pt "Times New Roman"'~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ n><span style='font-size:12.0pt;line-~dulla^@204~ Skills
+integration because the same ~dulla^@204~ d in Analysis, Design, and
+Developme~dulla^@204~ 
+
+<p class=MsoNormal style='margin-~dulla^@204~ n-right:0cm;margin-bottom:0cm;
+margi~dulla^@204~ ;margin-bottom:.0001pt;text-indent:-1~dulla^@204~ ight:150%'><span
+style='font-size:12~dulla^@204~ ght:150%;font-family:Symbol'>·<span
+~dulla^@204~ .0pt "Times New Roman"'>&nbsp;&nbsp;&~dulla^@204~ bsp;&nbsp;&nbsp;&nbsp;
+</span></span~dulla^@204~ 'font-size:12.0pt;line-height:150%'>P~dulla^@204~ pportunities that allow early feedbac~dulla^@204~ 
+
+<p class=MsoNormal style='margin-t~dulla^@204~ -right:0cm;margin-bottom:0cm;
+margin~dulla^@204~ margin-bottom:.0001pt;text-indent:-18~dulla^@204~ ght:150%'><span
+style='font-size:12.~dulla^@204~ ht:150%;font-family:Symbol'>·<span
+s~dulla^@204~ 0pt "Times New Roman"'>&nbsp;&nbsp;&n~dulla^@204~ sp;&nbsp;&nbsp;&nbsp;
+</span></span>~dulla^@204~ font-size:12.0pt;line-height:150%'>In~dulla^@204~ ability   [Schildt,2002, 18]</span></~dulla^@204~ e='margin:0cm;margin-bottom:.0001pt;t~dulla^@204~ .0pt;line-height:150%'><span
+style='~dulla^@204~ pt;line-height:150%;font-family:"Cali~dulla^@204~ rif";
+letter-spacing:-1.25pt'>&nbsp;~dulla^@204~ 
+<p style='margin-top:0cm;margin-rig~dulla^@204~ -bottom:0cm;margin-left:36.0pt;
+marg~dulla^@204~ 01pt;text-indent:-18.0pt;line-height:~dulla^@204~ n
+style='font-size:14.0pt;line-heigh~dulla^@204~ amily:"Calibri","sans-serif";
+letter~dulla^@204~ 5pt'>6.<span style='font:7.0pt "Times~dulla^@204~ &nbsp; </span></span></b><b><span
+st~dulla^@204~ e:14.0pt;line-height:150%;font-family~dulla^@204~ ans-serif";
+letter-spacing:-1.25pt'>~dulla^@204~ n></b></p>
+
+<p style='margin:0cm;ma~dulla^@204~ 0001pt;text-indent:35.45pt;line-heigh~dulla^@204~ an style='font-family:"Calibri","sans~dulla^@204~ proposed system is
+believed to decre~dulla^@204~ costs, redundant work costs and costs~dulla^@204~ ut by errors committed in manual oper~dulla^@204~ n></p>
+
+<p style='margin:0cm;margin~dulla^@204~ pt;line-height:150%'><span
+style='fo~dulla^@204~ ;line-height:150%;font-family:"Calibr~dulla^@204~ f"'>&nbsp;</span></p>
+
+<p style='ma~dulla^@204~ in-bottom:.0001pt;line-height:150%'><~dulla^@204~ font-size:3.0pt;line-height:150%;font~dulla^@204~ bri","sans-serif"'>&nbsp;</span></p>~dulla^@204~ margin:0cm;margin-bottom:.0001pt;line~dulla^@204~ ><span
+style='font-size:3.0pt;line-h~dulla^@204~ nt-family:"Calibri","sans-serif"'>&nb~dulla^@204~ >
+
+<p style='margin-top:0cm;margin-~dulla^@204~ gin-bottom:0cm;margin-left:36.0pt;
+m~dulla^@204~ .0001pt;text-indent:-18.0pt;line-heig~dulla^@204~ span
+style='font-size:14.0pt;line-he~dulla^@204~ t-family:"Calibri","sans-serif";
+let~dulla^@204~ 1.25pt'>7.<span style='font:7.0pt "Ti~dulla^@204~ "'>&nbsp; </span></span></b><b><span~dulla^@204~ size:14.0pt;line-height:150%;font-fam~dulla^@204~ ,"sans-serif";
+letter-spacing:-1.25p~dulla^@204~  </span></b></p>
+
+<p class=MsoNorma~dulla^@204~ -align:justify;text-indent:35.45pt;li~dulla^@204~ 50%'><span style='font-size:12.0pt;li~dulla^@204~ %'>The proposed system is
+also expec~dulla^@204~ e efficient in generating different r~dulla^@204~ hort period
+of time and with a minim~dulla^@204~ ost. It should also avoid redundant w~dulla^@204~ ors in reporting.</span></p>
+
+<p cl~dulla^@204~  style='text-align:justify;text-inden~dulla^@204~ e-height:
+150%'><span style='font-si~dulla^@204~ e-height:150%'>&nbsp;</span></p>
+
+<~dulla^@204~ rmal style='text-align:justify;text-i~dulla^@204~ ;line-height:
+150%'><span style='fon~dulla^@204~ ;line-height:150%'>&nbsp;</span></p>~dulla^@204~ soListParagraph style='text-align:jus~dulla^@204~ ent:-18.0pt;
+line-height:150%'><b><s~dulla^@204~ nt-size:14.0pt;line-height:150%'>8.<s~dulla^@204~ ont:7.0pt "Times New Roman"'>&nbsp;&n~dulla^@204~ sp; </span></span></b><b><span
+style~dulla^@204~ 4.0pt;line-height:150%'>Security</spa~dulla^@204~ 
+<p style='margin:0cm;margin-bottom:.~dulla^@204~ lign:justify;text-indent:35.45pt;
+li~dulla^@204~ %'><span style='font-family:"Calibri"~dulla^@204~ '>  </span><span
+style='font-family:~dulla^@204~ ns-serif"'>The new system is expected~dulla^@204~ a security policy to handle some very~dulla^@204~ eas of Inventory
+control. All loopho~dulla^@204~  been observed in the manual system w~dulla^@204~ ted to be highly minimized. Different~dulla^@204~  User name and password
+verification~dulla^@204~ .   </span></p>
+
+<p style='margin:0~dulla^@204~ tom:.0001pt;text-indent:35.45pt;line-~dulla^@204~ '><span style='font-family:"Calibri",~dulla^@204~ >            In addition,
+the system~dulla^@204~ ckup facilities whenever needed. Furt~dulla^@204~ 
+system failure occurs, the system s~dulla^@204~ stalled.</span></p>
+
+<p style='marg~dulla^@204~ -bottom:.0001pt;text-indent:35.45pt;l~dulla^@204~ 150%'><span style='font-size:6.0pt;li~dulla^@204~ %;font-family:"Calibri","sans-serif"'~dulla^@204~ ></p>
+
+<p style='margin:0cm;margin-~dulla^@204~ t;text-indent:18.0pt;line-height:150%~dulla^@204~ e='font-family:"Calibri","sans-serif"~dulla^@204~ le='font:7.0pt "Times New Roman"'>&nb~dulla^@204~ p;&nbsp;&nbsp;
+</span></span><b><spa~dulla^@204~ -size:14.0pt;line-height:150%;font-fa~dulla^@204~ ri","sans-serif";letter-spacing:-1.25~dulla^@204~ Issues<br>
+</span></b><span style='f~dulla^@204~ alibri","sans-serif"'>             Th~dulla^@204~ required to implement the system basi~dulla^@204~  hardware resources
+and the human re~dulla^@204~ spare part has most things required f~dulla^@204~ mentation except networking. Therefor~dulla^@204~ implement and operate
+the system it ~dulla^@204~ incur additional cost.</span></p>
+
+~dulla^@204~ gin-top:0cm;margin-right:0cm;margin-b~dulla^@204~ gin-left:18.0pt;
+margin-bottom:.0001~dulla^@204~ t:150%'><span style='font-family:"Cal~dulla^@204~ erif"'>&nbsp;</span></p>
+
+<p class=~dulla^@204~ aph style='text-indent:-18.0pt;line-h~dulla^@204~ b><span
+style='font-size:14.0pt;line~dulla^@204~ >10.<span style='font:7.0pt "Times Ne~dulla^@204~ sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+~dulla^@204~ ></b><b><span style='font-size:14.0pt~dulla^@204~ 150%'> Error
+handling</span></b></p>~dulla^@204~ 'margin:0cm;margin-bottom:.0001pt;tex~dulla^@204~ 5pt;line-height:
+150%'><span style='~dulla^@204~ Calibri","sans-serif"'>Because of err~dulla^@204~ pany can lose time and money. The pro~dulla^@204~ tries to protect errors
+before they ~dulla^@204~ ng the appropriate type of informatio~dulla^@204~ quired entry. But, to handle some err~dulla^@204~ em provides messages that
+report the~dulla^@204~ ve the user a chance to correct it. S~dulla^@204~ cess
+could have the following checki~dulla^@204~ span></p>
+
+<p style='margin:0cm;mar~dulla^@204~ 001pt;text-indent:42.55pt;line-height~dulla^@204~ n style='font-size:7.0pt;line-height:~dulla^@204~ ily:"Calibri","sans-serif"'>&nbsp;</s~dulla^@204~ p style='margin-top:0cm;margin-right:~dulla^@204~ ttom:0cm;margin-left:39.3pt;
+margin-~dulla^@204~ t;text-indent:-18.0pt;line-height:150~dulla^@204~ le='font-family:Wingdings'>v<span sty~dulla^@204~ t "Times New Roman"'>&nbsp;
+</span><~dulla^@204~ n style='font-family:"Calibri","sans-~dulla^@204~ Value
+Integrity</span></b><span styl~dulla^@204~ y:"Calibri","sans-serif"'>: ensures
+that the value of a field is from an appro~dulla^@204~ . This domain can be
+specified eithe~dulla^@204~ f allowable values or rules to be che~dulla^@204~ /p>
+
+<p style='margin-top:0cm;margi~dulla^@204~ argin-bottom:0cm;margin-left:39.3pt;~dulla^@204~ m:.0001pt;text-indent:-18.0pt;line-he~dulla^@204~ pan
+style='font-family:Wingdings'>v<~dulla^@204~ ont:7.0pt "Times New Roman"'>&nbsp;
+~dulla^@204~ ><b><span style='font-family:"Calibri~dulla^@204~ "'>Conditional
+Data Value Integrity<~dulla^@204~ an style='font-family:"Calibri","sans~dulla^@204~ pecifies the domain as a function of ~dulla^@204~ some other data element.</span></p>
+~dulla^@204~ argin-top:0cm;margin-right:0cm;margin~dulla^@204~ argin-left:39.3pt;
+margin-bottom:.00~dulla^@204~ ent:-18.0pt;line-height:150%'><span
+~dulla^@204~ amily:Wingdings'>v<span style='font:7~dulla^@204~ ew Roman"'>&nbsp;
+</span></span><b><~dulla^@204~ ont-family:"Calibri","sans-serif"'>Da~dulla^@204~  Integrity</span></b><span style='fon~dulla^@204~ ibri","sans-serif"'>:
+Specifies rela~dulla^@204~ t must hold among data elements in th~dulla^@204~ he
+most common case of data structur~dulla^@204~ s referential integrity, where
+somet~dulla^@204~ ecord must match something in another~dulla^@204~ n></p>
+
+</div>
+
+<b><span style='f~dulla^@204~ pt;line-height:150%;font-family:"Cali~dulla^@204~ rif"'><br
+clear=all style='page-brea~dulla^@204~ ys'>
+</span></b>
+
+<div class=Secti~dulla^@204~ ass=MsoNormal align=center style='mar~dulla^@204~ pt;text-align:center;
+line-height:15~dulla^@204~ an style='font-size:20.0pt;line-heigh~dulla^@204~ er
+Five</span></u></b></p>
+
+<p cla~dulla^@204~ align=center style='margin-left:18.0p~dulla^@204~ center;
+line-height:150%'><b><u><spa~dulla^@204~ -size:20.0pt;line-height:150%'>System~dulla^@204~ n></u></b></p>
+
+<p class=MsoListPar~dulla^@204~ center style='text-align:center;text-~dulla^@204~ 0pt;line-height:150%'><b><span style=~dulla^@204~ .0pt;line-height:150%'>1.<span
+style~dulla^@204~ "Times New Roman"'>&nbsp;&nbsp;&nbsp;~dulla^@204~ n></b><b><span
+style='font-size:16.0~dulla^@204~ t:150%'>Conceptual Design (ER- Diagra~dulla^@204~ <img
+width=837 height=449 src="help_~dulla^@204~ 4.jpg" alt=ERD.jpg></p>
+
+</div>
+
+~dulla^@204~ font-size:16.0pt;line-height:150%;fon~dulla^@204~ ibri","sans-serif"'><br
+clear=all st~dulla^@204~ ak-before:always'>
+</span>
+
+<div c~dulla^@204~ >
+
+<p class=MsoListParagraph align=~dulla^@204~ 'text-align:center;text-indent:
+-18.~dulla^@204~ ht:150%'><b><span style='font-size:20~dulla^@204~ ght:150%'>2.<span
+style='font:7.0pt ~dulla^@204~ man"'>&nbsp; </span></span></b><b><u>~dulla^@204~ 'font-size:20.0pt;line-height:150%'>L~dulla^@204~ /span></u></b></p>
+
+<p class=MsoNor~dulla^@204~ rgin-left:49.5pt;text-indent:-49.5pt'~dulla^@204~ yle='font-size:12.0pt;line-height:115~dulla^@204~ /span></b><span
+style='font-size:12.~dulla^@204~ ht:115%'>(PartNo, Description, Brand,~dulla^@204~ AtShop1, QtyAtShop2, QtyAtStore, Tota~dulla^@204~ ce, NetWeight, ShelfNo,
+ReorderQty)<~dulla^@204~ 
+<p class=MsoNormal style='margin-lef~dulla^@204~ -indent:-49.5pt'><span
+style='font-s~dulla^@204~ e-height:115%'>&nbsp;</span></p>
+
+<~dulla^@204~ rmal style='margin-left:31.5pt;text-i~dulla^@204~ ;line-height:
+200%'><b><span style='~dulla^@204~ 0pt;line-height:200%'>Sales</span></b~dulla^@204~ ='font-size:12.0pt;line-height:200%'>~dulla^@204~ o</u>, Date, PartNo,
+Description, Qu~dulla^@204~ rice, Amount,TotalAmount, VAT, GrandT~dulla^@204~ nWords, DueDate, , CustomerName, Cust~dulla^@204~ CustomerVATRegNo,
+CustomerTINNo, Dat~dulla^@204~ ></p>
+
+<p class=MsoNormal style='ma~dulla^@204~ 0pt;text-indent:-54.0pt;line-height:~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~ ase</span></b><span
+style='font-size~dulla^@204~ height:200%'> (<u>PurchaseInvoiceNo</~dulla^@204~ rtNo, Description, Brand, Origin, Net~dulla^@204~ ity, Price, Amount,
+TotalAmount,<u> ~dulla^@204~ ceNo</u>, <u>SupplierID</u>, Supplier~dulla^@204~ erAddress, FrieghtCharge, Miscellaneo~dulla^@204~ ndTotal, <u>SupplierID</u>)</span></p~dulla^@204~ =MsoNormal style='line-height:200%'><~dulla^@204~ ='font-size:12.0pt;
+line-height:200%~dulla^@204~ n></b><span style='font-size:12.0pt;l~dulla^@204~ 200%'>(<u>OrderNo</u>, Description, R~dulla^@204~ ty, <u>PartNo</u>)</span></p>
+
+<p c~dulla^@204~ l style='margin-left:63.0pt;text-inde~dulla^@204~ ne-height:
+200%'><b><span style='fon~dulla^@204~ ;line-height:200%'>Customers</span></~dulla^@204~ e='font-size:12.0pt;line-height:200%'~dulla^@204~ rName</u>,
+CustomerAddress, Fax, Ema~dulla^@204~ ATRegNo, CustomerTINNo, DateOfReg)</s~dulla^@204~ p class=MsoNormal style='margin-left:~dulla^@204~ ndent:-58.5pt;line-height:
+200%'><b>~dulla^@204~ font-size:12.0pt;line-height:200%'>St~dulla^@204~ n></b><span
+style='font-size:12.0pt;~dulla^@204~ 00%'>(<u>StockCardNo</u>, PartNo,
+Co~dulla^@204~ ription, SellingPrice, <u>InvoiceNo</~dulla^@204~ e,
+QuantityRecieved, QuanityIssued, ~dulla^@204~ ce)</span></p>
+
+<p class=MsoNormal ~dulla^@204~ eight:200%'><b><span style='font-size~dulla^@204~ e-height:200%'>Selling </span></b><sp~dulla^@204~ t-size:12.0pt;line-height:
+200%'>(<u~dulla^@204~ <u>InvoiceNo</u>, CustomerID, StockCa~dulla^@204~ </span></p>
+
+<p class=MsoNormal sty~dulla^@204~ ft:31.5pt;text-indent:-31.5pt;line-he~dulla^@204~ <span style='font-size:12.0pt;line-he~dulla^@204~ bsp;</span></p>
+
+<p class=MsoNormal~dulla^@204~ n-left:31.5pt;text-indent:-31.5pt;lin~dulla^@204~ 0%'><span style='font-size:12.0pt;lin~dulla^@204~ '>&nbsp;</span></p>
+
+<p class=MsoLi~dulla^@204~ SpFirst style='margin-left:54.0pt;lin~dulla^@204~ '><span
+style='font-size:16.0pt;line~dulla^@204~ >&nbsp;</span></p>
+
+<p class=MsoLis~dulla^@204~ pMiddle><span style='font-size:16.0pt~dulla^@204~ 
+115%'>&nbsp;</span></p>
+
+<p class~dulla^@204~ raphCxSpLast align=center style='text~dulla^@204~ ;
+text-indent:-18.0pt;line-height:15~dulla^@204~ style='font-size:20.0pt;
+line-height~dulla^@204~ n style='font:7.0pt "Times New Roman"~dulla^@204~ an></span></b><b><span
+style='font-s~dulla^@204~ ne-height:150%'>Normalization</span><~dulla^@204~  class=MsoNormal style='margin-left:6~dulla^@204~ dent:-67.5pt;line-height:
+200%'><b>P~dulla^@204~ b> (<u>PartNo</u>, Description, Brand~dulla^@204~ tWeight, Quantity, Price, Amount, <u>~dulla^@204~ ceNo</u>, <u>SupplierID</u>)</p>
+
+<~dulla^@204~ rmal style='margin-left:49.5pt;text-i~dulla^@204~ ;line-height:
+200%'><b>Purchase </b>~dulla^@204~ nvoiceNo</u>, Date, FrieghtCharge,
+M~dulla^@204~ ost, TotalAmount, GrandTotal, <u>Supp~dulla^@204~ p>
+
+<p class=MsoNormal style='line-~dulla^@204~ <b>Supplier</b> (<u>SupplierID</u>,
+~dulla^@204~  City, Country,Tel, Fax, PostAddress,~dulla^@204~ 
+
+<p class=MsoNormal style='margin-~dulla^@204~ ext-indent:-54.0pt;line-height:
+200%~dulla^@204~ s</b> (<u>CustomerName</u>, SubCity, ~dulla^@204~ No, Tel,
+PostAddress, Fax, Email, Cu~dulla^@204~ o, CustomerTINNo, DateOfReg)</p>
+
+<~dulla^@204~ rmal style='line-height:200%'><b>Cash~dulla^@204~ >CashSalesInvoiceNo</u>,
+Date, Total~dulla^@204~ GrandTotal, TotalInWords, <u>Customer~dulla^@204~ 
+
+<p class=MsoNormal style='margin-~dulla^@204~ ext-indent:-58.5pt;line-height:
+200%~dulla^@204~ les </b>(<u>CreditSalesInvoiceNo</u>,~dulla^@204~ mount, VAT,
+GrandTotal, TotalInWords~dulla^@204~  CustomerName</u>)</p>
+
+<p class=Ms~dulla^@204~ ='line-height:200%'><b>SalesInfo</b> ~dulla^@204~ >,
+Description, Quantity, UnitPrice,~dulla^@204~ ashSalesInvoiceNo,
+CreditSalesInvoic~dulla^@204~ 
+
+<p class=MsoNormal style='margin-l~dulla^@204~ xt-indent:-49.5pt;line-height:
+200%'~dulla^@204~ </b>(<u>PartNo</u>, Description, Quan~dulla^@204~ 
+QuantityAtShop2, QuantityAtStore, To~dulla^@204~ UnitCost, SellingPrice1,
+SellingPric~dulla^@204~ ReorderQuantity)</p>
+
+<p class=MsoN~dulla^@204~ line-height:200%'><b>Order </b>(<u>Or~dulla^@204~ escription, RequiredQuantity, <u>Part~dulla^@204~ 
+<p class=MsoNormal style='line-heig~dulla^@204~ tockCard </b>(<u>StockCardNo</u>,
+Pa~dulla^@204~ ce, Description, SellingPrice)</p>
+~dulla^@204~ Normal style='margin-left:76.5pt;text~dulla^@204~ pt;line-height:
+200%'><b>StockCardDetail </b>(<u>InvoiceNo</u>, DateOfSale, Qu~dulla^@204~ d,
+QuanityIssued, QuantityBalance, <~dulla^@204~ </u>)</p>
+
+<p class=MsoNormal style~dulla^@204~ :200%'><span style='font-size:12.0pt;~dulla^@204~ :200%'>&nbsp;</span></p>
+
+</div>
+~dulla^@204~ style='font-size:24.0pt;line-height:2~dulla^@204~ ly:"Calibri","sans-serif"'><br
+clear~dulla^@204~ age-break-before:always'>
+</span></u~dulla^@204~  class=Section6>
+
+<p class=MsoListP~dulla^@204~ n=center style='text-align:center;tex~dulla^@204~ 8.0pt;line-height:200%'><b><span styl~dulla^@204~ 24.0pt;line-height:200%'>4.<span
+sty~dulla^@204~ t "Times New Roman"'>&nbsp;&nbsp;&nbs~dulla^@204~ ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ sp;&nbsp;
+</span></span></b><b><u><s~dulla^@204~ nt-size:24.0pt;line-height:200%'>Data~dulla^@204~ </span></u></b></p>
+
+<p class=MsoNo~dulla^@204~ ine-height:200%'><b><u><span style='f~dulla^@204~ pt;
+line-height:200%'><img width=878~dulla^@204~ d="Picture 14"
+src="help_files/image~dulla^@204~ "Database Diagram.jpg"></span></u></b~dulla^@204~ v>
+
+<span style='font-size:12.0pt;l~dulla^@204~ 0%;font-family:"Calibri","sans-serif"~dulla^@204~ all style='page-break-before:always'>~dulla^@204~ <div class=Section7>
+
+<p class=MsoL~dulla^@204~ xSpMiddle align=center style='text-al~dulla^@204~ text-indent:-18.0pt;line-height:150%'~dulla^@204~ le='font-size:20.0pt;
+line-height:15~dulla^@204~ tyle='font:7.0pt "Times New Roman"'>&~dulla^@204~ </span></b><b><u><span
+style='font-s~dulla^@204~ ne-height:150%'>User Interface</span>~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpLast ~dulla^@204~ -left:54.0pt;text-indent:-18.0pt;
+li~dulla^@204~ %'><b><span style='font-size:16.0pt;l~dulla^@204~ 0%'>1.<span
+style='font:7.0pt "Times~dulla^@204~ &nbsp;&nbsp;&nbsp; </span></span></b>~dulla^@204~ le='font-size:16.0pt;line-height:150%~dulla^@204~ n</span></b></p>
+
+<p class=MsoNorma~dulla^@204~ -indent:36.0pt;line-height:150%'><img~dulla^@204~ eight=256 id="Picture 7" src="help_fi~dulla^@204~ jpg" alt="Login Screen.jpg"></p>
+
+<~dulla^@204~ rmal style='text-indent:36.0pt;line-h~dulla^@204~ span
+style='font-size:12.0pt;line-he~dulla^@204~ is form lets the user choose the
+loc~dulla^@204~ shop or store, checks if the user is ~dulla^@204~  access the
+database .This helps to ~dulla^@204~ horized access to the main interface.~dulla^@204~ 
+<p class=MsoNormal style='line-heig~dulla^@204~ n style='font-size:12.0pt;
+line-heig~dulla^@204~ p;</span></p>
+
+<p class=MsoNormal s~dulla^@204~ ight:150%'><span style='font-size:12.~dulla^@204~ ight:150%'>&nbsp;</span></p>
+
+<p cl~dulla^@204~  style='line-height:150%'><span style~dulla^@204~ 2.0pt;
+line-height:150%'>&nbsp;</spa~dulla^@204~ class=MsoNormal style='line-height:15~dulla^@204~ le='font-size:12.0pt;
+line-height:15~dulla^@204~ pan></p>
+
+<span style='font-size:12~dulla^@204~ ght:115%;font-family:"Calibri","sans-~dulla^@204~ clear=all style='page-break-before:al~dulla^@204~ n>
+
+<p class=MsoNormal><span style=~dulla^@204~ .0pt;line-height:115%'>&nbsp;</span><~dulla^@204~ ss=MsoListParagraphCxSpFirst style='m~dulla^@204~ .0pt;text-indent:-18.0pt;
+line-heigh~dulla^@204~ pan style='font-size:16.0pt;line-heig~dulla^@204~ pan
+style='font:7.0pt "Times New Rom~dulla^@204~ bsp;&nbsp; </span></span></b><b><span~dulla^@204~ -size:16.0pt;line-height:150%'>Main W~dulla^@204~ /b></p>
+
+<p class=MsoListParagraphC~dulla^@204~ ='margin-left:90.0pt;line-height:150%~dulla^@204~ e='font-size:6.0pt;line-height:150%'>~dulla^@204~ </p>
+
+<p class=MsoNormal style='lin~dulla^@204~ '><span style='font-size:16.0pt;
+lin~dulla^@204~ '><img width=648 height=500 id="Pictu~dulla^@204~ help_files/image007.jpg" alt="Main wi~dulla^@204~ pan></p>
+
+<p class=MsoNormal style=~dulla^@204~ 36.0pt;line-height:150%'><span
+style~dulla^@204~ 2.0pt;line-height:150%'>After the use~dulla^@204~ log in form,
+the main window will be~dulla^@204~ taining the necessary data based on t~dulla^@204~ cation and access right. </span></p>~dulla^@204~ soNormal style='text-indent:36.0pt;li~dulla^@204~ %'><span
+style='font-size:12.0pt;lin~dulla^@204~ '>A fully authorized user can access~dulla^@204~ roducts, purchase entry tables, creat~dulla^@204~ unts, generating
+different type of r~dulla^@204~ king backup for the Inventory Control~dulla^@204~ base.</span></p>
+
+<p class=MsoNorma~dulla^@204~ ='font-size:12.0pt;line-height:115%'>~dulla^@204~ </p>
+
+<p class=MsoNormal><span styl~dulla^@204~ 12.0pt;line-height:115%'>&nbsp;</span~dulla^@204~ lass=MsoNormal><b><span style='font-s~dulla^@204~ ne-height:115%'>&nbsp;</span></b></p>~dulla^@204~ MsoNormal><b><span style='font-size:1~dulla^@204~ ight:115%'>&nbsp;</span></b></p>
+
+<~dulla^@204~ stParagraph style='margin-left:54.0pt~dulla^@204~ -18.0pt;
+line-height:150%'><b><span ~dulla^@204~ ize:16.0pt;line-height:150%'>3.<span~dulla^@204~ 7.0pt "Times New Roman"'>&nbsp;&nbsp;~dulla^@204~ ></span></b><b><span
+style='font-siz~dulla^@204~ -height:150%'>Purchase entry </span><~dulla^@204~  class=MsoNormal style='line-height:1~dulla^@204~ th=651 height=475
+id="Picture 2" src~dulla^@204~ image008.jpg" alt="Purchase entry.jpg~dulla^@204~ class=MsoNormal style='margin-left:90~dulla^@204~ ent:36.0pt;line-height:
+150%'><span ~dulla^@204~ ize:2.0pt;line-height:150%'>&nbsp;</s~dulla^@204~ p class=MsoNormal style='text-indent:~dulla^@204~ eight:150%'><span
+style='font-size:1~dulla^@204~ ight:150%'>This entry form allows the~dulla^@204~ er the purchased product in a table l~dulla^@204~ h is similar to the
+existing purchas~dulla^@204~ m. The user can also set price for th~dulla^@204~ hased items and distribute quantity p~dulla^@204~ ranch shops and save some
+in the sto~dulla^@204~ >
+
+<p class=MsoNormal style='margin~dulla^@204~ text-indent:36.0pt;line-height:
+150%~dulla^@204~ 
+
+<p class=MsoNormal style='margin-l~dulla^@204~ xt-indent:36.0pt;line-height:
+150%'>~dulla^@204~ 
+<p class=MsoListParagraphCxSpFirst s~dulla^@204~ left:90.0pt;line-height:150%'><span
+~dulla^@204~ ize:12.0pt;line-height:150%'>&nbsp;</~dulla^@204~ <p class=MsoListParagraphCxSpMiddle s~dulla^@204~ left:126.0pt;text-indent:
+18.0pt;lin~dulla^@204~ '><span style='font-size:20.0pt;line-~dulla^@204~ &nbsp;</span></p>
+
+<p class=MsoList~dulla^@204~ Middle style='margin-left:54.0pt;text~dulla^@204~ y;
+text-indent:-18.0pt;line-height:1~dulla^@204~  style='font-size:16.0pt;
+line-heigh~dulla^@204~ an style='font:7.0pt "Times New Roman~dulla^@204~ p;&nbsp;
+</span></span></b><b><span ~dulla^@204~ ize:16.0pt;line-height:150%'>Price
+S~dulla^@204~ </span></b></p>
+
+<p class=MsoListPa~dulla^@204~ ddle align=center style='margin-left:~dulla^@204~ -align:center;line-height:150%'><span~dulla^@204~ size:2.0pt;line-height:
+150%'>[</spa~dulla^@204~ class=MsoListParagraphCxSpMiddle styl~dulla^@204~ t:0cm;line-height:150%'><span
+style=~dulla^@204~ .0pt;line-height:150%'><img width=624~dulla^@204~ id="Picture 11" src="help_files/image~dulla^@204~ "Price setting.jpg"></span></p>
+
+<p~dulla^@204~ tParagraphCxSpMiddle style='margin-le~dulla^@204~ pan
+style='font-size:12.0pt;line-hei~dulla^@204~ sp;</span></p>
+
+<p class=MsoListPar~dulla^@204~ dle style='margin-left:0cm;text-inden~dulla^@204~ ne-height:150%'><span style='font-siz~dulla^@204~ -height:150%'>As mentioned
+above, th~dulla^@204~ des the user with options that are go~dulla^@204~ d to
+set price for the products purc~dulla^@204~ ></p>
+
+<p class=MsoListParagraphCxS~dulla^@204~ ='margin-left:0cm;text-indent:36.0pt;~dulla^@204~ :150%'><span style='font-size:5.0pt;l~dulla^@204~ 0%'>&nbsp;</span></p>
+
+<p class=Mso~dulla^@204~ CxSpMiddle style='margin-left:0cm;tex~dulla^@204~ pt;
+line-height:150%'><span style='f~dulla^@204~ pt;line-height:150%'>Selling price
+2~dulla^@204~ he purchased item is available in the~dulla^@204~ le and if the
+product is purchased w~dulla^@204~  price, and then the selling price 2 ~dulla^@204~  The salesperson will sell the old pr~dulla^@204~ ling price 1 and the new
+products wi~dulla^@204~ ice2.<br clear=all style='page-break-~dulla^@204~ '>
+</span></p>
+
+<p class=MsoListPa~dulla^@204~ ddle style='margin-left:54.0pt;text-indent:-18.0pt'><b><span
+style='font-size:~dulla^@204~ eight:115%'>5.<span style='font:7.0pt~dulla^@204~ oman"'>&nbsp;&nbsp;&nbsp;
+</span></s~dulla^@204~ pan style='font-size:16.0pt;line-heig~dulla^@204~ tity
+Division</span></b></p>
+
+<p c~dulla^@204~ aragraphCxSpMiddle style='margin-left~dulla^@204~ n
+style='font-size:12.0pt;line-heigh~dulla^@204~ ;</span></p>
+
+<p class=MsoListParag~dulla^@204~ e style='margin-left:0cm'><span
+styl~dulla^@204~ 12.0pt;line-height:115%'><img width=6~dulla^@204~ 
+id="Picture 1" src="help_files/imag~dulla^@204~ ="Quantity Division.jpg"></span></p>~dulla^@204~ soListParagraphCxSpMiddle style='marg~dulla^@204~ t'><span
+style='font-size:12.0pt;lin~dulla^@204~ '>&nbsp;</span></p>
+
+<p class=MsoLi~dulla^@204~ SpMiddle style='margin-left:0cm;text-~dulla^@204~ ;
+line-height:150%'><span style='fon~dulla^@204~ ;line-height:150%'>By importing
+the ~dulla^@204~ olumn and the description column from~dulla^@204~  table which
+contain the total quant~dulla^@204~  the user can distribute the purchase~dulla^@204~ ther manually or by setting certain d~dulla^@204~  which can distribute
+products to th~dulla^@204~ matically).</span></p>
+
+<p class=Ms~dulla^@204~ hCxSpMiddle style='margin-left:90.0pt~dulla^@204~ 150%'><span
+style='font-size:12.0pt;~dulla^@204~ 50%'>&nbsp;</span></p>
+
+<p class=Ms~dulla^@204~ hCxSpMiddle style='margin-left:90.0pt~dulla^@204~ e='font-size:12.0pt;line-height:115%'~dulla^@204~ ></p>
+
+<p class=MsoListParagraphCxS~dulla^@204~ ='margin-left:90.0pt'><span
+style='f~dulla^@204~ pt;line-height:115%'>&nbsp;</span></p~dulla^@204~ =MsoListParagraphCxSpMiddle style='ma~dulla^@204~ 0pt'><span
+style='font-size:12.0pt;l~dulla^@204~ 5%'>&nbsp;</span></p>
+
+<p class=Mso~dulla^@204~ CxSpMiddle style='margin-left:90.0pt'~dulla^@204~ ='font-size:12.0pt;line-height:115%'>~dulla^@204~ </p>
+
+<p class=MsoListParagraphCxSp~dulla^@204~ 'margin-left:90.0pt'><span
+style='fo~dulla^@204~ t;line-height:115%'>&nbsp;</span></p>~dulla^@204~ MsoListParagraphCxSpMiddle style='mar~dulla^@204~ pt'><span
+style='font-size:12.0pt;li~dulla^@204~ %'>&nbsp;</span></p>
+
+<p class=MsoL~dulla^@204~ xSpMiddle style='margin-left:90.0pt'>~dulla^@204~ 'font-size:12.0pt;line-height:115%'>&~dulla^@204~ /p>
+
+<p class=MsoListParagraphCxSpM~dulla^@204~ margin-left:54.0pt;text-indent:-18.0p~dulla^@204~ style='font-size:16.0pt;line-height:1~dulla^@204~ style='font:7.0pt "Times New Roman"'>~dulla^@204~ nbsp;
+</span></span></b><b><span sty~dulla^@204~ :16.0pt;line-height:115%'>Sales
+Scre~dulla^@204~ </p>
+
+<p class=MsoListParagraphCxSp~dulla^@204~ 'margin-left:54.0pt'><b><span
+style=~dulla^@204~ 0pt;line-height:115%'>&nbsp;</span></~dulla^@204~ class=MsoListParagraphCxSpMiddle styl~dulla^@204~ t:54.0pt'><b><span
+style='font-size:~dulla^@204~ ight:115%'>&nbsp;</span></b></p>
+
+<~dulla^@204~ stParagraphCxSpMiddle style='margin-l~dulla^@204~ n
+style='font-size:12.0pt;line-heigh~dulla^@204~ width=641 height=584
+id="Picture 12"~dulla^@204~ les/image011.jpg" alt=Sales.jpg></spa~dulla^@204~ class=MsoListParagraphCxSpMiddle styl~dulla^@204~ t:0cm'><span
+style='font-size:12.0pt~dulla^@204~ 115%'>&nbsp;</span></p>
+
+<p class=M~dulla^@204~ phCxSpMiddle style='margin-left:0cm;l~dulla^@204~ 0%'><span
+style='font-size:12.0pt;li~dulla^@204~ %'>            When a customer asks f~dulla^@204~  product, the salesperson writes the ~dulla^@204~  number or
+description. Then, produc~dulla^@204~  be previewed the requested product. ~dulla^@204~ son can add the products information ~dulla^@204~ table. </span></p>
+
+<p class=MsoLis~dulla^@204~ pMiddle style='margin-left:0cm;line-h~dulla^@204~ span
+style='font-size:12.0pt;line-he~dulla^@204~ bsp;</span></p>
+
+<p class=MsoListPa~dulla^@204~ ddle style='margin-left:0cm;line-heig~dulla^@204~ n
+style='font-size:12.0pt;line-heigh~dulla^@204~        Below the table, total
+amount~dulla^@204~ and grand total will be automatically~dulla^@204~ If the
+customer agrees, the salesper~dulla^@204~ s “Sale”. Then, the system asks if
+t~dulla^@204~  to generate report.</span></p>
+
+<p~dulla^@204~ tParagraphCxSpLast style='margin-left~dulla^@204~ indent:-18.0pt;
+line-height:150%'><b~dulla^@204~ 'font-size:16.0pt;line-height:150%'>7~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~  </span></span></b><b><span
+style='f~dulla^@204~ pt;line-height:150%'>Products Table</~dulla^@204~ 
+
+<p class=MsoNormal style='line-he~dulla^@204~ pan style='font-size:12.0pt;
+line-he~dulla^@204~ mg width=659 height=490 id="Picture 3~dulla^@204~ files/image012.jpg" alt=Products.jpg>~dulla^@204~ 
+<p class=MsoNormal style='text-inde~dulla^@204~ e-height:150%'><span
+style='font-siz~dulla^@204~ -height:150%'>The above form is previ~dulla^@204~ 
+user sales a product or search if a~dulla^@204~ vailable. It returns quantity
+at bot~dulla^@204~ n store including the cost and sellin~dulla^@204~ an></p>
+
+<p class=MsoNormal style='~dulla^@204~ 50%'><span style='font-size:12.0pt;
+~dulla^@204~ 50%'>            It also shows in whi~dulla^@204~ item is found
+and the reorder quanti~dulla^@204~ ates the minimum amount that must be ~dulla^@204~ pan></p>
+
+<p class=MsoNormal style=~dulla^@204~ 54.0pt;line-height:150%'><span
+style~dulla^@204~ 2.0pt;line-height:150%'>&nbsp;</span>~dulla^@204~ ass=MsoNormal style='margin-left:54.0~dulla^@204~ t:150%'><span
+style='font-size:12.0p~dulla^@204~ :150%'>&nbsp;</span></p>
+
+<p class=~dulla^@204~ le='line-height:150%'><span style='fo~dulla^@204~ t;
+line-height:150%'>&nbsp;</span></~dulla^@204~ s=MsoNormal align=center style='margi~dulla^@204~ bottom:.0001pt;
+text-align:center;te~dulla^@204~ ;line-height:normal'><a name="_Toc270~dulla^@204~ a
+name="_Toc269871342"></a><a name="~dulla^@204~ "><b><span style='font-size:
+20.0pt'~dulla^@204~ 'font:7.0pt "Times New Roman"'>&nbsp;~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n~dulla^@204~ /span></span></b><b><span style='font~dulla^@204~ >6. Hardware</span></b></a><b><span
+~dulla^@204~ ize:20.0pt'> Mapping</span></b></p>
+~dulla^@204~ oNormal style='text-align:justify'><i~dulla^@204~ height=316
+id="Picture 0" src="help_~dulla^@204~ 3.gif" alt=Picture2.png></p>
+
+<p cl~dulla^@204~  style='margin-left:21.0pt;text-align~dulla^@204~ 
+name="_Toc270231198"></a><a name="_T~dulla^@204~ </a><a name="_Toc269974828">         ~dulla^@204~                  </a></p>
+
+<p class~dulla^@204~ yle='text-align:justify;text-indent:4~dulla^@204~ eight:
+150%'><span style='font-size:~dulla^@204~ eight:150%'>In the </span><span
+styl~dulla^@204~ 12.0pt;line-height:150%'>Inventory</s~dulla^@204~ yle='font-size:12.0pt;line-height:150~dulla^@204~ /span><span
+style='font-size:12.0pt;~dulla^@204~ 50%'>and management </span><span
+sty~dulla^@204~ :12.0pt;line-height:150%'>system, as ~dulla^@204~ he deployment
+diagram above, there a~dulla^@204~ s of hardware systems namely the clie~dulla^@204~ e server.</span></p>
+
+<p class=MsoN~dulla^@204~ text-align:justify;text-indent:49.65p~dulla^@204~ :
+150%'><span style='font-size:1.0pt~dulla^@204~ 150%'>&nbsp;</span></p>
+
+<p class=M~dulla^@204~ e='margin-top:0cm;margin-right:0cm;ma~dulla^@204~ cm;
+margin-left:57.0pt;margin-bottom~dulla^@204~ -align:justify;text-indent:-18.0pt;
+~dulla^@204~ 50%'><span style='font-family:Symbol'~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</spa~dulla^@204~ n style='font-size:12.0pt;line-height~dulla^@204~ ient PC</span></p>
+
+<p class=MsoNor~dulla^@204~ xt-align:justify;text-indent:49.65pt;~dulla^@204~ 
+150%'><span style='font-size:12.0pt;~dulla^@204~ 50%'>T</span><span
+style='font-size:~dulla^@204~ eight:150%'>his type of hardware is a~dulla^@204~ mputer used by </span><span style='fo~dulla^@204~ t;line-height:150%'>the
+salespersons~dulla^@204~ span><span style='font-size:12.0pt;li~dulla^@204~ %'>.
+The client machine uses the use~dulla^@204~ o make use of the server side of </sp~dulla^@204~ le='font-size:12.0pt;line-height:150%~dulla^@204~ span><span
+style='font-size:12.0pt;l~dulla^@204~ 0%'> Control System.</span></p>
+
+<p~dulla^@204~ mal style='margin-top:0cm;margin-righ~dulla^@204~ bottom:0cm;
+margin-left:57.0pt;margin-bottom:.0001pt;text-align:justify;text-i~dulla^@204~ ;
+line-height:150%'><span style='fon~dulla^@204~ ;line-height:150%;font-family:
+Symbo~dulla^@204~ le='font:7.0pt "Times New Roman"'>&nb~dulla^@204~ p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</s~dulla^@204~ pan style='font-size:12.0pt;line-heig~dulla^@204~ Server
+machine</span></p>
+
+<p clas~dulla^@204~ graph style='line-height:150%'><span ~dulla^@204~ ize:2.0pt;
+line-height:150%'>&nbsp;<~dulla^@204~ 
+<p class=MsoNormal style='text-align~dulla^@204~ -indent:36.0pt;line-height:
+150%'><s~dulla^@204~ nt-size:12.0pt;line-height:150%'>T</s~dulla^@204~ yle='font-size:12.0pt;line-height:150~dulla^@204~ re is a powerful machine
+capable of ~dulla^@204~ pulating and retrieval of persistent ~dulla^@204~ /span><span
+style='font-size:12.0pt;~dulla^@204~ 50%'>system</span><span style='font-s~dulla^@204~ line-height:150%'>. Additionally, it ~dulla^@204~ /span><span
+style='font-size:12.0pt;~dulla^@204~ 50%'>manager</span><span style='font-~dulla^@204~ ;line-height:150%'> to carryout syste~dulla^@204~ ion tasks.</span></p>
+
+</div>
+
+<b~dulla^@204~ le='font-size:20.0pt;line-height:150%~dulla^@204~ "Calibri","sans-serif"'><br
+clear=al~dulla^@204~ -break-before:always'>
+</span></u></~dulla^@204~ ass=Section8>
+
+<p class=MsoListPara~dulla^@204~ enter style='text-align:center;line-h~dulla^@204~ ><b><u><span style='font-size:20.0pt;~dulla^@204~ 50%'>7. Network Design</span></u></b>~dulla^@204~ 'font-size:12.0pt;line-height:150%'><~dulla^@204~  height=558
+id="Picture 13" src="hel~dulla^@204~ 014.jpg" alt="Network Diagram.jpg"></~dulla^@204~ </div>
+
+<span style='font-size:12.0~dulla^@204~ t:150%;font-family:"Calibri","sans-se~dulla^@204~ ear=all style='page-break-before:alwa~dulla^@204~ 
+
+<div class=Section9>
+
+<p class=~dulla^@204~ gn=center style='margin-left:22.5pt;t~dulla^@204~ ter;
+line-height:150%'><b><u><span s~dulla^@204~ ze:20.0pt;line-height:150%'>Reference~dulla^@204~ b></p>
+
+<p class=MsoListParagraphCx~dulla^@204~ ='margin-left:40.5pt;line-height:150%~dulla^@204~ 
+style='font-size:3.0pt;line-height:~dulla^@204~ tyle='text-decoration:none'>&nbsp;</s~dulla^@204~ u></b></p>
+
+<p class=MsoListParagra~dulla^@204~ style='margin-left:40.5pt;line-height~dulla^@204~ <span
+style='font-size:19.0pt;line-h~dulla^@204~ ibliography</span></u></b></p>
+
+<p ~dulla^@204~ ParagraphCxSpMiddle style='margin-lef~dulla^@204~ -align:justify;
+text-indent:-18.0pt;~dulla^@204~ 50%'>1)<span style='font:7.0pt "Times~dulla^@204~ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</spa~dulla^@204~ oseph S., George, Joey F., Hoofer, Je~dulla^@204~ sentials
+Systems Analysis and Design~dulla^@204~ p> Edition Prentice Hall </p>
+
+<p c~dulla^@204~ aragraphCxSpMiddle style='margin-left~dulla^@204~ align:justify;
+text-indent:-18.0pt;l~dulla^@204~ 0%'>2)<span style='font:7.0pt "Times ~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span~dulla^@204~ t, W., 2001, Object primer 2<sup>nd</~dulla^@204~ ridge:
+Cambridge university press</p~dulla^@204~ =MsoListParagraphCxSpMiddle style='ma~dulla^@204~ 3pt;text-align:justify;
+text-indent:~dulla^@204~ height:150%'>3)<span style='font:7.0p~dulla^@204~ Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp~dulla^@204~ lis, Thearon, Newsome Bryan, Beginnin~dulla^@204~ c 2005 1<sup>st</sup>
+Edition, Wiley~dulla^@204~ nc.</p>
+
+<p class=MsoListParagraphC~dulla^@204~ ='margin-left:39.3pt;text-align:justi~dulla^@204~ ent:-18.0pt;line-height:150%'>4)<span~dulla^@204~ 7.0pt "Times New Roman"'>&nbsp;&nbsp;~dulla^@204~ nbsp;
+</span>Schildt, Herbert, 2002,~dulla^@204~  reference Java 2, 5<sup>th</sup>
+Ed~dulla^@204~ -Hill Companies Inc.</p>
+
+<span sty~dulla^@204~ :12.0pt;line-height:150%;font-family:~dulla^@204~ ns-serif"'><br
+clear=all style='page~dulla^@204~ :always'>
+</span>
+
+<p class=MsoNor~dulla^@204~ ne-height:150%'><span style='font-siz~dulla^@204~ ne-height:150%'>&nbsp;</span></p>
+
+~dulla^@204~ an style='font-size:12.0pt;line-heigh~dulla^@204~ amily:"Calibri","sans-serif"'><br
+cl~dulla^@204~ ='page-break-before:always'>
+</span>~dulla^@204~ s=Section10>
+
+<p class=MsoListParag~dulla^@204~ style='margin-left:216.0pt;text-inden~dulla^@204~ ne-height:150%'><b><u><span style='fo~dulla^@204~ t;line-height:150%'>Appendix
+I</span~dulla^@204~ 
+
+<p class=MsoNormal style='margin-~dulla^@204~ ><b><span style='font-size:16.0pt;
+l~dulla^@204~ 5%'>     <u>Interview</u></span></b><~dulla^@204~ ss=MsoNormal style='text-indent:36.0p~dulla^@204~ e='font-size:12.0pt;
+line-height:115~dulla^@204~ ing are the lists of summary question~dulla^@204~ 
+that was held with the assistant man~dulla^@204~ hop concerning the current
+system an~dulla^@204~ s.</span></p>
+
+<table class=MsoNorm~dulla^@204~ r=1 cellspacing=0 cellpadding=0
+ sty~dulla^@204~ llapse:collapse;border:none'>
+ <tr>~dulla^@204~ 26 valign=top style='width:19.2pt;bor~dulla^@204~ ck 1.0pt;
+  padding:0cm 5.4pt 0cm 5.~dulla^@204~ lass=MsoNormal style='margin-bottom:0~dulla^@204~ tom:.0001pt;line-height:
+  normal'><~dulla^@204~ ont-size:18.0pt'>&nbsp;</span></p>
+ ~dulla^@204~  width=240 valign=top style='width:17~dulla^@204~ solid black 1.0pt;
+  border-left:non~dulla^@204~  5.4pt 0cm 5.4pt'>
+  <p class=MsoNor~dulla^@204~ ter style='margin-bottom:0cm;margin-b~dulla^@204~ ;
+  text-align:center;line-height:no~dulla^@204~ tyle='font-size:18.0pt'>Questions</sp~dulla^@204~ td>
+  <td width=574 valign=top style~dulla^@204~ pt;border:solid black 1.0pt;
+  borde~dulla^@204~ adding:0cm 5.4pt 0cm 5.4pt'>
+  <p cl~dulla^@204~  align=center style='margin-bottom:0c~dulla^@204~ om:.0001pt;
+  text-align:center;line~dulla^@204~ l'><span style='font-size:18.0pt'>Ans~dulla^@204~ p>
+  </td>
+ </tr>
+ <tr>
+  <td wid~dulla^@204~ top style='width:19.2pt;border:solid ~dulla^@204~ 
+  border-top:none;padding:0cm 5.4pt ~dulla^@204~   <p class=MsoNormal style='margin-bo~dulla^@204~ in-bottom:.0001pt;line-height:
+  nor~dulla^@204~ yle='font-size:12.0pt'>1.</span></p>~dulla^@204~ td width=240 valign=top style='width:~dulla^@204~ r-top:none;border-left:
+  none;borde~dulla^@204~ d black 1.0pt;border-right:solid blac~dulla^@204~ adding:0cm 5.4pt 0cm 5.4pt'>
+  <p cl~dulla^@204~  style='margin-bottom:0cm;margin-bott~dulla^@204~ ne-height:
+  normal'><span style='fo~dulla^@204~ t'>How does the current system work?<~dulla^@204~  </td>
+  <td width=574 valign=top st~dulla^@204~ 0.2pt;border-top:none;border-left:
+ ~dulla^@204~ bottom:solid black 1.0pt;border-right~dulla^@204~ 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt~dulla^@204~ s=MsoNormal style='margin-bottom:0cm;~dulla^@204~ :.0001pt;line-height:
+  normal'><spa~dulla^@204~ -size:12.0pt'>Most of the work in the~dulla^@204~ 
+  manually. If we start from making~dulla^@204~ r, one of the salesperson who
+  is a~dulla^@204~ le for making out the order will go a~dulla^@204~ lves and
+  tries to make out the lis~dulla^@204~ at should be ordered and which he
+  ~dulla^@204~ uld be ordered even if the items does~dulla^@204~ ere. Then this
+  items will be liste~dulla^@204~ t excel and will be printed so that i~dulla^@204~ axed to the supplier country or the p~dulla^@204~ responsible for bringing
+  up the pr~dulla^@204~ he supplier country will take the pap~dulla^@204~ r
+  .Then after the products are pur~dulla^@204~ ought to our country and left
+  the ~dulla^@204~ the product are directly taken to the~dulla^@204~  that
+  counting and checking of the~dulla^@204~ s place. Then the store keeper will
+~dulla^@204~ the items to the two shops and set up~dulla^@204~ cording to the
+  manager’s requireme~dulla^@204~ product left the store, a paper will ~dulla^@204~ d which contain the distributed items~dulla^@204~  and their price.</span></p>
+  <p cl~dulla^@204~  style='margin-bottom:0cm;margin-bott~dulla^@204~ ne-height:
+  normal'><span style='fo~dulla^@204~ t'>&nbsp;</span></p>
+  </td>
+ </tr>~dulla^@204~ d width=26 valign=top style='width:19~dulla^@204~ olid black 1.0pt;
+  border-top:none;~dulla^@204~ .4pt 0cm 5.4pt'>
+  <p class=MsoNorma~dulla^@204~ in-bottom:0cm;margin-bottom:.0001pt;l~dulla^@204~   normal'><span style='font-size:12.0~dulla^@204~ </p>
+  </td>
+  <td width=240 valign~dulla^@204~ idth:179.7pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0~dulla^@204~ ht:solid black 1.0pt;
+  padding:0cm ~dulla^@204~ pt'>
+  <p class=MsoNormal style='mar~dulla^@204~ m;margin-bottom:.0001pt;line-height:~dulla^@204~ pan style='font-size:12.0pt'>How do y~dulla^@204~ tomer request for
+  a product?</span~dulla^@204~ >
+  <td width=574 valign=top style='~dulla^@204~ ;border-top:none;border-left:
+  none~dulla^@204~ m:solid black 1.0pt;border-right:soli~dulla^@204~ ;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+ ~dulla^@204~ Normal style='margin-bottom:0cm;margi~dulla^@204~ 1pt;line-height:
+  normal'><span sty~dulla^@204~ :12.0pt'>When a customer asks for a c~dulla^@204~ duct, the salesperson will try to loc~dulla^@204~ ct on the shop inventory
+  book and ~dulla^@204~ ems on the shelves if it exists. Sinc~dulla^@204~ ry
+  book is not updated, there is n~dulla^@204~ f knowing the exact quantity of
+  th~dulla^@204~ roduct. If the product exists, the sa~dulla^@204~ l tell the
+  price for the customer.~dulla^@204~ person doesn’t know the exact amount ~dulla^@204~ ce of the product it will search its ~dulla^@204~ inventory book which
+  contains part~dulla^@204~ e and quantity which were brought fro~dulla^@204~ n></p>
+  </td>
+ </tr>
+ <tr>
+  <td~dulla^@204~ ign=top style='width:19.2pt;border:so~dulla^@204~ pt;
+  border-top:none;padding:0cm 5.~dulla^@204~ '>
+  <p class=MsoNormal style='margi~dulla^@204~ margin-bottom:.0001pt;line-height:
+ ~dulla^@204~ n style='font-size:12.0pt'>3.</span><~dulla^@204~ 
+  <td width=240 valign=top style='wi~dulla^@204~ order-top:none;border-left:
+  none;b~dulla^@204~ solid black 1.0pt;border-right:solid ~dulla^@204~ 
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <~dulla^@204~ rmal style='margin-bottom:0cm;margin-~dulla^@204~ t;line-height:
+  normal'><span style~dulla^@204~ 2.0pt'>How do you know when items rea~dulla^@204~ rdering level is due?</span></p>
+  <~dulla^@204~ idth=574 valign=top style='width:430.~dulla^@204~ p:none;border-left:
+  none;border-bo~dulla^@204~ ack 1.0pt;border-right:solid black 1.~dulla^@204~ ng:0cm 5.4pt 0cm 5.4pt'>
+  <p class=~dulla^@204~ le='margin-bottom:0cm;margin-bottom:.~dulla^@204~ eight:
+  normal'><span style='font-s~dulla^@204~ here is no mechanism of knowing the
+~dulla^@204~ amount or quantity. </span></p>
+  </~dulla^@204~  <tr>
+  <td width=26 valign=top styl~dulla^@204~ pt;border:solid black 1.0pt;
+  borde~dulla^@204~ dding:0cm 5.4pt 0cm 5.4pt'>
+  <p cla~dulla^@204~ style='margin-bottom:0cm;margin-botto~dulla^@204~ e-height:
+  normal'><span style='fon~dulla^@204~ '>4.</span></p>
+  </td>
+  <td width~dulla^@204~ op style='width:179.7pt;border-top:no~dulla^@204~ t:
+  none;border-bottom:solid black ~dulla^@204~ right:solid black 1.0pt;
+  padding:0~dulla^@204~ 5.4pt'>
+  <p class=MsoNormal style='~dulla^@204~ :0cm;margin-bottom:.0001pt;line-heigh~dulla^@204~ ><span style='font-size:12.0pt'>How d~dulla^@204~ ders?</span></p>
+  </td>
+  <td widt~dulla^@204~ top style='width:430.2pt;border-top:n~dulla^@204~ ft:
+  none;border-bottom:solid black~dulla^@204~ -right:solid black 1.0pt;
+  padding:~dulla^@204~  5.4pt'>
+  <p class=MsoNormal style=~dulla^@204~ m:0cm;margin-bottom:.0001pt;line-heig~dulla^@204~ '><span style='font-size:12.0pt'>Usua~dulla^@204~ s ordered when they
+  are out of sto~dulla^@204~ ening the demand of the market for a ~dulla^@204~  product.</span></p>
+  <p class=MsoN~dulla^@204~ margin-bottom:0cm;margin-bottom:.0001~dulla^@204~ t:
+  normal'><span style='font-size:~dulla^@204~ ;</span></p>
+  </td>
+ </tr>
+ <tr>~dulla^@204~ 26 valign=top style='width:19.2pt;bor~dulla^@204~ ck 1.0pt;
+  border-top:none;padding:~dulla^@204~  5.4pt'>
+  <p class=MsoNormal style=~dulla^@204~ m:0cm;margin-bottom:.0001pt;line-heig~dulla^@204~ '><span style='font-size:12.0pt'>5.</~dulla^@204~ </td>
+  <td width=240 valign=top sty~dulla^@204~ .7pt;border-top:none;border-left:
+  ~dulla^@204~ ottom:solid black 1.0pt;border-right:~dulla^@204~ .0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'~dulla^@204~ =MsoNormal style='margin-bottom:0cm;m~dulla^@204~ .0001pt;line-height:
+  normal'><span~dulla^@204~ size:12.0pt'>Are you satisfied with t~dulla^@204~  system? If no what are the major pro~dulla^@204~ </p>
+  </td>
+  <td width=574 valign~dulla^@204~ idth:430.2pt;border-top:none;border-l~dulla^@204~ border-bottom:solid black 1.0pt;borde~dulla^@204~  black 1.0pt;
+  padding:0cm 5.4pt 0c~dulla^@204~ <p class=MsoNormal style='margin-bott~dulla^@204~ -bottom:.0001pt;line-height:
+  norma~dulla^@204~ e='font-size:12.0pt'>We are not satis~dulla^@204~  current
+  system which is almost ma~dulla^@204~ many problems the following can be
+ ~dulla^@204~ he whole process of selling and handl~dulla^@204~ ers takes much
+  time. There is no w~dulla^@204~  knowing for the existence of a produ~dulla^@204~ e also no mechanize of controlling th~dulla^@204~ evel of items in our
+  shop and also~dulla^@204~ op. The process of making order is al~dulla^@204~ nsuming and not timely done. We also ~dulla^@204~ e exact inventory level
+  in branch ~dulla^@204~ new inventory level of items there we~dulla^@204~ ter,
+  save cost of phone  bill whic~dulla^@204~ ue to asking of item in branch shop
+~dulla^@204~ our customer  better than now.</span>~dulla^@204~ ass=MsoNormal style='margin-bottom:0c~dulla^@204~ om:.0001pt;line-height:
+  normal'><s~dulla^@204~ nt-size:12.0pt'>&nbsp;</span></p>
+  ~dulla^@204~ 
+ <tr>
+  <td width=26 valign=top st~dulla^@204~ .2pt;border:solid black 1.0pt;
+  bor~dulla^@204~ padding:0cm 5.4pt 0cm 5.4pt'>
+  <p c~dulla^@204~ l style='margin-bottom:0cm;margin-bot~dulla^@204~ ine-height:
+  normal'><span style='f~dulla^@204~ pt'>6.</span></p>
+  </td>
+  <td wid~dulla^@204~ =top style='width:179.7pt;border-top:~dulla^@204~ eft:
+  none;border-bottom:solid blac~dulla^@204~ r-right:solid black 1.0pt;
+  padding~dulla^@204~ m 5.4pt'>
+  <p class=MsoNormal style~dulla^@204~ om:0cm;margin-bottom:.0001pt;line-hei~dulla^@204~ l'><span style='font-size:12.0pt'>Wha~dulla^@204~ uld you like to be
+  added in the sy~dulla^@204~ are going to develop?</span></p>
+  <~dulla^@204~ idth=574 valign=top style='width:430.~dulla^@204~ p:none;border-left:
+  none;border-bo~dulla^@204~ ack 1.0pt;border-right:solid black 1.~dulla^@204~ ng:0cm 5.4pt 0cm 5.4pt'>
+  <p class=~dulla^@204~ le='margin-bottom:0cm;margin-bottom:.~dulla^@204~ eight:
+  normal'><span style='font-s~dulla^@204~ he new system should include things
+~dulla^@204~ g the current inventory level at the ~dulla^@204~ d store. It
+  should also simplify p~dulla^@204~  quantity division, searching, report~dulla^@204~ g such as order report, sales report,~dulla^@204~ t and related
+  things like showing ~dulla^@204~  contribution for profit. </span></p>~dulla^@204~ MsoNormal style='margin-bottom:0cm;ma~dulla^@204~ 0001pt;line-height:
+  normal'><span ~dulla^@204~ ize:12.0pt'>&nbsp;</span></p>
+  </td~dulla^@204~ table>
+
+<p class=MsoNormal><span st~dulla^@204~ e:12.0pt;line-height:115%'>&nbsp;</sp~dulla^@204~ pan style='font-size:12.0pt;line-heig~dulla^@204~ family:"Calibri","sans-serif"'><br
+c~dulla^@204~ e='page-break-before:always'>
+</span~dulla^@204~ =MsoNormal><span style='font-size:12.~dulla^@204~ ht:115%'>&nbsp;</span></p>
+
+</div>~dulla^@204~ e='font-size:12.0pt;line-height:150%;~dulla^@204~ Calibri","sans-serif"'><br
+clear=all~dulla^@204~ break-before:always'>
+</span>
+
+<di~dulla^@204~ on11>
+
+<p class=MsoNormal align=cen~dulla^@204~ xt-align:center;line-height:150%'><b>~dulla^@204~ le='font-size:20.0pt;line-height:150%~dulla^@204~ /span></u></b></p>
+
+<p class=MsoNor~dulla^@204~ ter style='text-align:center;line-hei~dulla^@204~ <u><span
+style='font-size:16.0pt;lin~dulla^@204~ '>Questionnaire</span></u></b></p>
+~dulla^@204~ Normal style='text-indent:36.0pt;line~dulla^@204~ ><span
+style='font-size:12.0pt;line-~dulla^@204~ We are students from the Addis Ababa~dulla^@204~ ollege of Commerce. We are undertakin~dulla^@204~  in partial
+fulfillment of the award~dulla^@204~  in BAIS. We are talking a sample of~dulla^@204~  spare part shop to assess the existi~dulla^@204~ en working and
+handling the manual s~dulla^@204~ iews could be used to help the firm and the
+decision maker (manager) to make i~dulla^@204~ ions about the existing problems
+(if~dulla^@204~ y). Most of the questions have to do ~dulla^@204~ roblems that
+you may have faced from~dulla^@204~ nce. Some questions may involve issue~dulla^@204~ re your attitudes and opinion, in whi~dulla^@204~ no “right” and “wrong”
+answers. All ~dulla^@204~ l be treated in strict confidentialit~dulla^@204~ 
+will never be associated with your a~dulla^@204~ y is the best foot forward!</span></p~dulla^@204~ =MsoNormal style='line-height:150%'><~dulla^@204~ ont-size:12.0pt;
+line-height:150%'> ~dulla^@204~ e purpose of following questions is t~dulla^@204~ respondents’ attitude towards problem~dulla^@204~ in daily activities
+of the shops. </~dulla^@204~ <p class=MsoListParagraphCxSpFirst st~dulla^@204~ ent:-18.0pt;line-height:150%'><span
+~dulla^@204~ ize:12.0pt;line-height:150%'>1.<span ~dulla^@204~ .0pt "Times New Roman"'>&nbsp;&nbsp;&~dulla^@204~ bsp;
+</span></span><span style='font~dulla^@204~ line-height:150%'>How many times
+sal~dulla^@204~  day?</span></p>
+
+<p class=MsoListP~dulla^@204~ iddle style='text-indent:36.0pt;line-~dulla^@204~ <span
+style='font-size:12.0pt;line-h~dulla^@204~ ____to ______times a day</span></p>
+~dulla^@204~ oListParagraphCxSpMiddle style='text-~dulla^@204~ t;line-height:
+150%'><span style='fo~dulla^@204~ t;line-height:150%'>2.<span style='fo~dulla^@204~ es New Roman"'>&nbsp;&nbsp;&nbsp;&nbs~dulla^@204~ pan></span><span style='position:abso~dulla^@204~ 25;left:0px;margin-left:
+210px;margi~dulla^@204~ dth:21px;height:19px'><img width=21 h~dulla^@204~ ="help_files/image015.gif"></span><sp~dulla^@204~ t-size:12.0pt;line-height:
+150%'>How~dulla^@204~  react, when you search for a product~dulla^@204~ 
+manually?</span></p>
+
+<p class=Ms~dulla^@204~ hCxSpMiddle style='margin-left:72.0pt~dulla^@204~ 150%'><span
+style='position:relative~dulla^@204~ <span style='left:0px;position:absolu~dulla^@204~ px;top:-1px;width:21px;height:19px'><~dulla^@204~ height=19
+src="help_files/image016.g~dulla^@204~ span><span style='position:relative;~dulla^@204~ <span style='left:0px;position:absolu~dulla^@204~ top:-1px;
+width:21px;height:19px'><i~dulla^@204~ eight=19 src="help_files/image016.gif~dulla^@204~ an><span
+style='font-size:12.0pt;lin~dulla^@204~ '>Frequently                   Occasi~dulla^@204~          Not
+frequently</span></p>
+~dulla^@204~ oListParagraphCxSpMiddle style='text-~dulla^@204~ t;line-height:
+150%'><span style='fo~dulla^@204~ t;line-height:150%'>3.<span style='fo~dulla^@204~ es New Roman"'>&nbsp;&nbsp;&nbsp;&nbs~dulla^@204~ pan></span><span style='font-size:12.~dulla^@204~ ht:150%'>How do you find
+the current~dulla^@204~ eparing the daily sales report?</span~dulla^@204~ lass=MsoListParagraphCxSpMiddle style~dulla^@204~ :72.0pt;text-indent:-18.0pt;
+line-he~dulla^@204~ pan style='font-size:12.0pt;line-heig~dulla^@204~ pan
+style='font:7.0pt "Times New Rom~dulla^@204~ bsp;&nbsp;&nbsp;&nbsp; </span></span>~dulla^@204~ 'position:absolute;z-index:16;left:0p~dulla^@204~ :449px;margin-top:1px;
+width:21px;he~dulla^@204~ mg width=21 height=19 src="help_files~dulla^@204~ "></span><span
+style='position:absol~dulla^@204~ 5;left:0px;margin-left:357px;margin-t~dulla^@204~ h:21px;height:19px'><img width=21 hei~dulla^@204~ elp_files/image016.gif"></span><span~dulla^@204~ ion:absolute;z-index:14;left:0px;marg~dulla^@204~ ;margin-top:1px;
+width:21px;height:1~dulla^@204~ th=21 height=19 src="help_files/image~dulla^@204~ an><span
+style='position:absolute;z-~dulla^@204~ :0px;margin-left:66px;margin-top:1px;~dulla^@204~ height:19px'><img width=21 height=19 ~dulla^@204~ es/image016.gif"></span><span
+style=~dulla^@204~ .0pt;line-height:150%'>Good          ~dulla^@204~     Moderate 
+                  Poor~dulla^@204~     Very poor</span></p>
+
+<p class=~dulla^@204~ aphCxSpMiddle style='text-indent:-18.~dulla^@204~ ht:
+150%'><span style='font-size:12.~dulla^@204~ ht:150%'>4.<span style='font:7.0pt "T~dulla^@204~ n"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<~dulla^@204~ <span style='font-size:12.0pt;line-he~dulla^@204~  you face
+problems when setting pric~dulla^@204~ >
+
+<p class=MsoListParagraphCxSpMid~dulla^@204~ rgin-left:72.0pt;text-indent:-18.0pt;~dulla^@204~ :150%'><span style='font-size:12.0pt;~dulla^@204~ 50%'>a.<span
+style='font:7.0pt "Time~dulla^@204~ >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </spa~dulla^@204~ n
+style='position:relative;z-index:1~dulla^@204~ e='left:0px;position:absolute;
+left:~dulla^@204~ x;width:21px;height:19px'><img width=~dulla^@204~ 
+src="help_files/image016.gif"></span~dulla^@204~  style='position:relative;
+z-index:1~dulla^@204~ e='left:0px;position:absolute;left:66~dulla^@204~ 
+width:21px;height:19px'><img width=2~dulla^@204~ rc="help_files/image016.gif"></span><~dulla^@204~ style='font-size:12.0pt;line-height:1~dulla^@204~                           No</span></~dulla^@204~ s=MsoListParagraphCxSpMiddle style='t~dulla^@204~ 8.0pt;line-height:
+150%'><span style~dulla^@204~ 2.0pt;line-height:150%'>5.<span style~dulla^@204~ "Times New Roman"'>&nbsp;&nbsp;&nbsp;~dulla^@204~ 
+</span></span><span style='font-size~dulla^@204~ height:150%'>If yes how often?
+</spa~dulla^@204~ class=MsoListParagraphCxSpMiddle styl~dulla^@204~ t:72.0pt;text-indent:-18.0pt;
+line-h~dulla^@204~ span style='font-size:12.0pt;line-hei~dulla^@204~ span
+style='font:7.0pt "Times New Ro~dulla^@204~ nbsp;&nbsp;&nbsp;&nbsp; </span></span~dulla^@204~ ='position:absolute;z-index:19;left:0~dulla^@204~ t:349px;margin-top:1px;
+width:21px;h~dulla^@204~ img width=21 height=19 src="help_file~dulla^@204~ f"></span><span
+style='position:abso~dulla^@204~ 17;left:0px;margin-left:215px;margin-~dulla^@204~ th:21px;height:19px'><img width=21 he~dulla^@204~ help_files/image015.gif"></span><span~dulla^@204~ tion:absolute;z-index:18;left:0px;mar~dulla^@204~ ;margin-top:1px;
+width:21px;height:1~dulla^@204~ th=21 height=19 src="help_files/image~dulla^@204~ an><span
+style='font-size:12.0pt;lin~dulla^@204~ '>Frequently                   Always~dulla^@204~             Sometimes
+</span></p>
+~dulla^@204~ ListParagraphCxSpMiddle style='text-i~dulla^@204~ ;line-height:
+150%'><span style='fon~dulla^@204~ ;line-height:150%'>6.<span style='fon~dulla^@204~ s New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp~dulla^@204~ an></span><span style='font-size:12.0~dulla^@204~ t:150%'>How often, are
+you asked to ~dulla^@204~ ort? </span></p>
+
+<p class=MsoListP~dulla^@204~ iddle style='text-indent:36.0pt;line-~dulla^@204~ <span
+style='position:absolute;z-ind~dulla^@204~ x;margin-left:66px;margin-top:1px;
+w~dulla^@204~ ght:19px'><img width=21 height=19 src~dulla^@204~ image016.gif"></span><span
+style='po~dulla^@204~ te;z-index:22;left:0px;margin-left:21~dulla^@204~ p:1px;
+width:21px;height:19px'><img ~dulla^@204~ ht=19 src="help_files/image016.gif"><~dulla^@204~ style='position:relative;z-index:21'>~dulla^@204~ left:0px;position:absolute;
+left:344~dulla^@204~ idth:21px;height:19px'><img width=21 ~dulla^@204~ c="help_files/image016.gif"></span></~dulla^@204~ yle='font-size:12.0pt;
+line-height:1~dulla^@204~ ly                   Occasionally    ~dulla^@204~ ot
+frequently</span></p>
+
+<p class~dulla^@204~ raphCxSpMiddle style='text-indent:36.~dulla^@204~ ht:150%'><span
+style='font-size:12.0~dulla^@204~ t:150%'>&nbsp;</span></p>
+
+<p class~dulla^@204~ raphCxSpMiddle style='text-indent:36.~dulla^@204~ ht:150%'><span
+style='font-size:12.0~dulla^@204~ t:150%'>&nbsp;</span></p>
+
+<p class~dulla^@204~ raphCxSpMiddle style='text-indent:-18~dulla^@204~ ght:
+150%'><span style='font-size:12~dulla^@204~ ght:150%'>7.<span style='font:7.0pt "~dulla^@204~ an"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+~dulla^@204~ ><span style='font-size:12.0pt;line-h~dulla^@204~ hich kinds of
+reports are often need~dulla^@204~ ger?</span></p>
+
+<p class=MsoListPa~dulla^@204~ ddle style='line-height:150%'><span
+~dulla^@204~ ize:12.0pt;line-height:150%'>________~dulla^@204~ __________________________</span></p>~dulla^@204~ MsoListParagraphCxSpMiddle style='lin~dulla^@204~ '><span
+style='font-size:12.0pt;line~dulla^@204~ >____________________________________~dulla^@204~ span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='line-height:150%'><span~dulla^@204~ -size:12.0pt;line-height:150%'>______~dulla^@204~ ____________________________</span></~dulla^@204~ s=MsoListParagraphCxSpMiddle style='t~dulla^@204~ 8.0pt;line-height:
+150%'><span style~dulla^@204~ 2.0pt;line-height:150%'>8.<span style~dulla^@204~ "Times New Roman"'>&nbsp;&nbsp;&nbsp;~dulla^@204~ 
+</span></span><span style='position:~dulla^@204~ dex:3;left:0px;margin-left:
+344px;ma~dulla^@204~ ;width:21px;height:19px'><img width=2~dulla^@204~ src="help_files/image015.gif"></span>~dulla^@204~ font-size:12.0pt;line-height:
+150%'>~dulla^@204~ the inventory checked?</span></p>
+
+~dulla^@204~ istParagraphCxSpMiddle style='margin-~dulla^@204~ ext-indent:-18.0pt;
+line-height:150%~dulla^@204~ ='font-size:12.0pt;line-height:150%'>~dulla^@204~ e='font:7.0pt "Times New Roman"'>&nbs~dulla^@204~ ;&nbsp;&nbsp; </span></span><span
+st~dulla^@204~ :absolute;z-index:4;left:0px;margin-l~dulla^@204~ gin-top:0px;
+width:21px;height:19px'~dulla^@204~ 1 height=19 src="help_files/image016.~dulla^@204~ span
+style='position:absolute;z-inde~dulla^@204~ margin-left:66px;margin-top:2px;
+wid~dulla^@204~ t:19px'><img width=21 height=19 src="~dulla^@204~ age016.gif"></span><span
+style='font~dulla^@204~ line-height:150%'>Daily              ~dulla^@204~  Weekly
+                       Month~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpMidd~dulla^@204~ t-indent:-18.0pt;line-height:
+150%'>~dulla^@204~ font-size:12.0pt;line-height:150%'>9.~dulla^@204~ font:7.0pt "Times New Roman"'>&nbsp;&~dulla^@204~ bsp;&nbsp;
+</span></span><span style~dulla^@204~ 2.0pt;line-height:150%'> Do you recei~dulla^@204~ about your report?</span></p>
+
+<p c~dulla^@204~ aragraphCxSpMiddle style='margin-left~dulla^@204~ height:150%'><span
+style='position:a~dulla^@204~ ex:2;left:0px;margin-left:202px;margi~dulla^@204~ idth:21px;height:19px'><img width=21 ~dulla^@204~ ="help_files/image015.gif"></span><sp~dulla^@204~ sition:absolute;z-index:1;left:0px;ma~dulla^@204~ x;margin-top:1px;
+width:21px;height:~dulla^@204~ dth=21 height=19 src="help_files/imag~dulla^@204~ pan><span
+style='font-size:12.0pt;li~dulla^@204~ %'>Yes                               ~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpMidd~dulla^@204~ t-indent:-18.0pt;line-height:
+150%'>~dulla^@204~ font-size:12.0pt;line-height:150%'>10~dulla^@204~ ='font:7.0pt "Times New Roman"'>&nbsp~dulla^@204~ an><span
+style='font-size:12.0pt;lin~dulla^@204~ '>How often do sales on credit happen~dulla^@204~ 
+
+<p class=MsoListParagraphCxSpMiddl~dulla^@204~ in-left:72.0pt;line-height:150%'><spa~dulla^@204~ ition:absolute;z-index:8;left:0px;mar~dulla^@204~ x;margin-top:1px;
+width:21px;height:~dulla^@204~ dth=21 height=19 src="help_files/imag~dulla^@204~ pan><span
+style='position:relative;z~dulla^@204~ an style='left:0px;position:absolute;~dulla^@204~ top:-1px;width:21px;height:19px'><img~dulla^@204~ ght=19
+src="help_files/image016.gif"~dulla^@204~ n><span style='position:relative;
+z-~dulla^@204~ n style='left:0px;position:absolute;l~dulla^@204~ -1px;
+width:21px;height:19px'><img w~dulla^@204~ t=19 src="help_files/image016.gif"></~dulla^@204~ span
+style='font-size:12.0pt;line-he~dulla^@204~ equently                   Occasional~dulla^@204~      Not
+frequently</span></p>
+
+<p~dulla^@204~ tParagraphCxSpMiddle style='text-inde~dulla^@204~ ne-height:
+150%'><span style='font-s~dulla^@204~ ne-height:150%'>11.<span
+style='font~dulla^@204~  New Roman"'>&nbsp; </span></span><sp~dulla^@204~ sition:absolute;z-index:10;left:0px;m~dulla^@204~ 0px;margin-top:27px;
+width:21px;heig~dulla^@204~  width=21 height=19 src="help_files/i~dulla^@204~ </span><span
+style='position:absolut~dulla^@204~ eft:0px;margin-left:66px;margin-top:2~dulla^@204~ 1px;height:19px'><img width=21 height~dulla^@204~ _files/image015.gif"></span><span
+st~dulla^@204~ e:12.0pt;line-height:150%'>Are there ~dulla^@204~ when sales or
+purchase occur on cred~dulla^@204~ ></p>
+
+<p class=MsoListParagraphCxS~dulla^@204~ ='line-height:150%'><span
+style='fon~dulla^@204~ ;line-height:150%'>            Yes   ~dulla^@204~                No</span></p>
+
+<p cl~dulla^@204~ ragraphCxSpMiddle style='text-indent:~dulla^@204~ height:
+150%'><span style='font-size~dulla^@204~ height:150%'>12.<span
+style='font:7.~dulla^@204~ w Roman"'>&nbsp; </span></span><span~dulla^@204~ size:12.0pt;line-height:150%'>If yes ~dulla^@204~ r problems that
+arise because of sal~dulla^@204~ e on credit</span></p>
+
+<p class=Ms~dulla^@204~ hCxSpMiddle style='line-height:150%'>~dulla^@204~ 'font-size:12.0pt;line-height:150%'>_~dulla^@204~ ________­­­­­­­­­­­­­­­­­­­­_________~dulla^@204~ ______________________</span></p>
+
+~dulla^@204~ istParagraphCxSpMiddle style='line-he~dulla^@204~ pan
+style='font-size:12.0pt;line-hei~dulla^@204~ _____________________________________~dulla^@204~ _____________</span></p>
+
+<p class=~dulla^@204~ aphCxSpMiddle style='line-height:150%~dulla^@204~ e='font-size:12.0pt;line-height:150%'~dulla^@204~ _____________________________________~dulla^@204~ ____</span></p>
+
+<p class=MsoListPa~dulla^@204~ ddle style='line-height:150%'><span
+~dulla^@204~ ize:12.0pt;line-height:150%'>________~dulla^@204~ _____________________________________~dulla^@204~ n></p>
+
+<p class=MsoListParagraphCx~dulla^@204~ e='text-indent:-18.0pt;line-height:
+~dulla^@204~ tyle='font-size:12.0pt;line-height:15~dulla^@204~ 
+style='font:7.0pt "Times New Roman"'~dulla^@204~ n></span><span
+style='font-size:12.0~dulla^@204~ t:150%'>If data is captured incorrect~dulla^@204~ affect your reporting?      </span></~dulla^@204~ s=MsoListParagraphCxSpMiddle style='t~dulla^@204~ .0pt;line-height:150%'><span
+style='~dulla^@204~ lute;z-index:27;left:0px;margin-left:~dulla^@204~ top:0px;
+width:21px;height:19px'><im~dulla^@204~ ight=19 src="help_files/image016.gif"~dulla^@204~ 
+style='position:absolute;z-index:26~dulla^@204~ gin-left:67px;margin-top:0px;
+width:~dulla^@204~ 9px'><img width=21 height=19 src="hel~dulla^@204~ 016.gif"></span><span
+style='font-si~dulla^@204~ e-height:150%'>Yes                   ~dulla^@204~ p>
+
+<p class=MsoListParagraphCxSpLa~dulla^@204~ t-indent:-18.0pt;line-height:150%'><s~dulla^@204~ ont-size:12.0pt;line-height:150%'>14.~dulla^@204~ font:7.0pt "Times New Roman"'>&nbsp;~dulla^@204~ n><span style='font-size:12.0pt;line-~dulla^@204~ If yes list the
+problems that arise ~dulla^@204~ correct data entry? </span></p>
+
+<p~dulla^@204~ mal style='margin-left:36.0pt;line-he~dulla^@204~ <span
+style='font-size:12.0pt'>_____~dulla^@204~ __________________________________</s~dulla^@204~ p class=MsoNormal style='margin-left:~dulla^@204~ eight:normal'><span
+style='font-size~dulla^@204~ _____________________________________~dulla^@204~ span></p>
+
+<p class=MsoNormal style~dulla^@204~ :36.0pt;line-height:normal'><span
+st~dulla^@204~ e:12.0pt'>___________________________~dulla^@204~ ____________</span></p>
+
+<p class=M~dulla^@204~ e='margin-left:36.0pt;line-height:150~dulla^@204~ le='font-size:1.0pt;line-height:150%'~dulla^@204~ ></p>
+
+<p class=MsoListParagraphCxS~dulla^@204~ 'text-indent:-18.0pt;line-height:150%~dulla^@204~ e='font-size:12.0pt;line-height:150%'~dulla^@204~ le='font:7.0pt "Times New Roman"'>&nb~dulla^@204~ /span><span style='font-size:12.0pt;l~dulla^@204~ 0%'>If solved which
+kind of problems~dulla^@204~  will be good to facilitate your dail~dulla^@204~ ></p>
+
+<p class=MsoListParagraphCxS~dulla^@204~ ='margin-left:35.45pt;text-indent:
+-~dulla^@204~ ight:150%'><span style='font-size:12.~dulla^@204~ ht:150%'>____________________________~dulla^@204~ _____________________</span></p>
+
+<~dulla^@204~ stParagraphCxSpMiddle style='margin-l~dulla^@204~ xt-indent:-42.55pt;
+line-height:150%~dulla^@204~ ='font-size:12.0pt;line-height:150%'>~dulla^@204~ _____________________________________~dulla^@204~ /span></p>
+
+<p class=MsoListParagra~dulla^@204~ yle='margin-left:72.0pt;text-indent:-~dulla^@204~ e-height:150%'><span style='font-size~dulla^@204~ height:150%'>________________________~dulla^@204~ _________________________</span></p>~dulla^@204~ soNormal><span style='font-size:12.0p~dulla^@204~ :115%'>­­</span></p>
+
+</div>
+
+</body>
+
+</html>

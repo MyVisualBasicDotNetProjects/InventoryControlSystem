@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnReports2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReports2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MANIMENU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MANIMENU.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnProducts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnProducts2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgProducts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgProducts.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReports" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReports.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnPassword2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPassword2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bgQuantityDivision" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bgQuantityDivision.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSales.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b ~dulla^@204~ ~dulla^@204~ </data>
+  <data name="btnPurchase2" ~dulla^@204~ Resources.ResXFileRef, System.Windows~dulla^@204~  <value>..\Resources\btnPurchase2.png~dulla^@204~ ng.Bitmap, System.Drawing, Version=2.~dulla^@204~ e=neutral, PublicKeyToken=b03f5f7f11d~dulla^@204~ 
+  </data>
+  <data name="bgPriceSet~dulla^@204~ ystem.Resources.ResXFileRef, System.W~dulla^@204~ >
+    <value>..\Resources\bgPriceSet~dulla^@204~ em.Drawing.Bitmap, System.Drawing, Ve~dulla^@204~ , Culture=neutral, PublicKeyToken=b03~dulla^@204~ </value>
+  </data>
+  <data name="bg~dulla^@204~  type="System.Resources.ResXFileRef, ~dulla^@204~ s.Forms">
+    <value>..\Resources\bg~dulla^@204~ png;System.Drawing.Bitmap, System.Dra~dulla^@204~ =2.0.0.0, Culture=neutral, PublicKeyT~dulla^@204~ 11d50a3a</value>
+  </data>
+  <data ~dulla^@204~ word" type="System.Resources.ResXFile~dulla^@204~ indows.Forms">
+    <value>..\Resourc~dulla^@204~ d.png;System.Drawing.Bitmap, System.D~dulla^@204~ on=2.0.0.0, Culture=neutral, PublicKe~dulla^@204~ 7f11d50a3a</value>
+  </data>
+  <dat~dulla^@204~ oducts" type="System.Resources.ResXFi~dulla^@204~ .Windows.Forms">
+    <value>..\Resou~dulla^@204~ cts.png;System.Drawing.Bitmap, System~dulla^@204~ sion=2.0.0.0, Culture=neutral, Public~dulla^@204~ 5f7f11d50a3a</value>
+  </data>
+  <d~dulla^@204~ eports" type="System.Resources.ResXFi~dulla^@204~ .Windows.Forms">
+    <value>..\Resou~dulla^@204~ s.png;System.Drawing.Bitmap, System.D~dulla^@204~ on=2.0.0.0, Culture=neutral, PublicKe~dulla^@204~ 7f11d50a3a</value>
+  </data>
+  <dat~dulla^@204~ ers2" type="System.Resources.ResXFile~dulla^@204~ indows.Forms">
+    <value>..\Resourc~dulla^@204~ png;System.Drawing.Bitmap, System.Dra~dulla^@204~ =2.0.0.0, Culture=neutral, PublicKeyT~dulla^@204~ 11d50a3a</value>
+  </data>
+  <data ~dulla^@204~ Up2" type="System.Resources.ResXFileR~dulla^@204~ ndows.Forms">
+    <value>..\Resource~dulla^@204~ png;System.Drawing.Bitmap, System.Dra~dulla^@204~ =2.0.0.0, Culture=neutral, PublicKeyT~dulla^@204~ 11d50a3a</value>
+  </data>
+  <data ~dulla^@204~ eUserAccount" type="System.Resources.~dulla^@204~ System.Windows.Forms">
+    <value>..~dulla^@204~ CreateUserAccount.png;System.Drawing.~dulla^@204~ m.Drawing, Version=2.0.0.0, Culture=n~dulla^@204~ cKeyToken=b03f5f7f11d50a3a</value>
+ ~dulla^@204~ data name="bgChangePassword" type="Sy~dulla^@204~ s.ResXFileRef, System.Windows.Forms">~dulla^@204~ ..\Resources\bgChangePassword.png;Sys~dulla^@204~ itmap, System.Drawing, Version=2.0.0.~dulla^@204~ utral, PublicKeyToken=b03f5f7f11d50a3~dulla^@204~ </data>
+  <data name="close" type="S~dulla^@204~ es.ResXFileRef, System.Windows.Forms"~dulla^@204~ >..\Resources\close.png;System.Drawin~dulla^@204~ tem.Drawing, Version=2.0.0.0, Culture~dulla^@204~ licKeyToken=b03f5f7f11d50a3a</value>~dulla^@204~  <data name="login" type="System.Reso~dulla^@204~ eRef, System.Windows.Forms">
+    <va~dulla^@204~ ces\login.jpg;System.Drawing.Bitmap, ~dulla^@204~ g, Version=2.0.0.0, Culture=neutral, ~dulla^@204~ n=b03f5f7f11d50a3a</value>
+  </data>~dulla^@204~ e="window" type="System.Resources.Res~dulla^@204~ tem.Windows.Forms">
+    <value>..\Re~dulla^@204~ w.png;System.Drawing.Bitmap, System.D~dulla^@204~ on=2.0.0.0, Culture=neutral, PublicKe~dulla^@204~ 7f11d50a3a</value>
+  </data>
+  <dat~dulla^@204~ ENU" type="System.Resources.ResXFileR~dulla^@204~ ndows.Forms">
+    <value>..\Resource~dulla^@204~ g;System.Drawing.Bitmap, System.Drawi~dulla^@204~ .0.0.0, Culture=neutral, PublicKeyTok~dulla^@204~ d50a3a</value>
+  </data>
+  <data na~dulla^@204~ e="System.Resources.ResXFileRef, Syst~dulla^@204~ rms">
+    <value>..\Resources\home.p~dulla^@204~ wing.Bitmap, System.Drawing, Version=~dulla^@204~ ure=neutral, PublicKeyToken=b03f5f7f1~dulla^@204~ e>
+  </data>
+  <data name="btnUsers~dulla^@204~ m.Resources.ResXFileRef, System.Windo~dulla^@204~    <value>..\Resources\btnUsers.png;S~dulla^@204~ .Bitmap, System.Drawing, Version=2.0.~dulla^@204~ neutral, PublicKeyToken=b03f5f7f11d50~dulla^@204~   </data>
+  <data name="Products" ty~dulla^@204~ sources.ResXFileRef, System.Windows.F~dulla^@204~ value>..\Resources\Products.png;Syste~dulla^@204~ map, System.Drawing, Version=2.0.0.0,~dulla^@204~ ral, PublicKeyToken=b03f5f7f11d50a3a<~dulla^@204~ data>
+  <data name="helpb" type="Sys~dulla^@204~ .ResXFileRef, System.Windows.Forms">~dulla^@204~ .\Resources\helpb.png;System.Drawing.~dulla^@204~ m.Drawing, Version=2.0.0.0, Culture=n~dulla^@204~ cKeyToken=b03f5f7f11d50a3a</value>
+ ~dulla^@204~ data name="bguseraccount" type="Syste~dulla^@204~ esXFileRef, System.Windows.Forms">
+ ~dulla^@204~ Resources\bguseraccount.png;System.Dr~dulla^@204~  System.Drawing, Version=2.0.0.0, Cul~dulla^@204~  PublicKeyToken=b03f5f7f11d50a3a</val~dulla^@204~ >
+  <data name="btnSales2" type="Sys~dulla^@204~ .ResXFileRef, System.Windows.Forms">~dulla^@204~ .\Resources\btnSales2.png;System.Draw~dulla^@204~ ystem.Drawing, Version=2.0.0.0, Cultu~dulla^@204~ ublicKeyToken=b03f5f7f11d50a3a</value~dulla^@204~ 
+  <data name="btnPurchase" type="Sys~dulla^@204~ .ResXFileRef, System.Windows.Forms">~dulla^@204~ .\Resources\btnPurchase.png;System.Dr~dulla^@204~  System.Drawing, Version=2.0.0.0, Cul~dulla^@204~  PublicKeyToken=b03f5f7f11d50a3a</val~dulla^@204~ >
+  <data name="btnBackUp" type="Sys~dulla^@204~ .ResXFileRef, System.Windows.Forms">~dulla^@204~ .\Resources\btnBackUp.png;System.Draw~dulla^@204~ ystem.Drawing, Version=2.0.0.0, Cultu~dulla^@204~ ublicKeyToken=b03f5f7f11d50a3a</value~dulla^@204~ 
+  <data name="bgSales" type="System.~dulla^@204~ XFileRef, System.Windows.Forms">
+   ~dulla^@204~ sources\bgSales.png;System.Drawing.Bi~dulla^@204~ Drawing, Version=2.0.0.0, Culture=neu~dulla^@204~ eyToken=b03f5f7f11d50a3a</value>
+  <~dulla^@204~ ta name="login1" type="System.Resourc~dulla^@204~ f, System.Windows.Forms">
+    <value~dulla^@204~ \login1.jpg;System.Drawing.Bitmap, Sy~dulla^@204~  Version=2.0.0.0, Culture=neutral, Pu~dulla^@204~ b03f5f7f11d50a3a</value>
+  </data>
+</root>

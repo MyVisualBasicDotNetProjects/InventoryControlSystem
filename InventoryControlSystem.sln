@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InventoryControlSystem", "InventoryControlSystem\InventoryControlSystem.vbproj", "{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SICS Setup", "SICS Setup\SICS Setup.vdproj", "{A6A6D8AE-21EF-4ED4-A77B-2FFCF9712B16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A6D8AE-21EF-4ED4-A77B-2FFCF9712B16}.Debug|Any CPU.ActiveCfg = Debug
+		{A6A6D8AE-21EF-4ED4-A77B-2FFCF9712B16}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

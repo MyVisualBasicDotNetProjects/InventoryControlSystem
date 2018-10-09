@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PriceSettingDataSet" targetNamespace="http://tempuri.org/PriceSettingDataSet.xsd" xmlns:mstns="http://tempuri.org/PriceSettingDataSet.xsd" xmlns="http://tempuri.org/PriceSettingDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PurchaseInfoConnection" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="PurchaseInfoConnection (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.InventoryControlSystem.My.MySettings.GlobalReference.Default.PurchaseInfoConnection" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewPriceSettingTableAdapter" GeneratorDataComponentClassName="ViewPriceSettingTableAdapter" Name="ViewPriceSetting" UserDataComponentName="ViewPriceSettingTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PurchaseInfoConnection (MySettings)" DbObjectName="InventoryControlSystem.dbo.ViewPriceSetting" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT PartNo, Description, UnitCost, TotalQuantity, SellingPrice1, SellingPrice2 FROM dbo.ViewPriceSetting</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PartNo" DataSetColumn="PartNo" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="UnitCost" DataSetColumn="UnitCost" />
+              <Mapping SourceColumn="TotalQuantity" DataSetColumn="TotalQuantity" />
+              <Mapping SourceColumn="SellingPrice1" DataSetColumn="SellingPrice1" />
+              <Mapping SourceColumn="SellingPrice2" DataSetColumn="SellingPrice2" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PriceSettingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="PriceSettingDataSet" msprop:Generator_DataSetName="PriceSettingDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewPriceSetting" msprop:Generator_UserTableName="ViewPriceSetting" msprop:Generator_RowDeletedName="ViewPriceSettingRowDeleted" msprop:Generator_RowChangedName="ViewPriceSettingRowChanged" msprop:Generator_RowClassName="ViewPriceSettingRow" msprop:Generator_RowChangingName="ViewPriceSettingRowChanging" msprop:Generator_RowEvArgName="ViewPriceSettingRowChangeEvent" msprop:Generator_RowEvHandlerName="ViewPriceSettingRowChangeEventHandler" msprop:Generator_TableClassName="ViewPriceSettingDataTable" msprop:Generator_TableVarName="tableViewPriceSetting" msprop:Generator_RowDeletingName="ViewPriceSettingRowDeleting" msprop:Generator_TablePropName="ViewPriceSetting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartNo" msprop:Generator_UserColumnName="PartNo" msprop:Generator_ColumnVarNameInTable="columnPartNo" msprop:Generator_ColumnPropNameInRow="PartNo" msprop:Generator_ColumnPropNameInTable="PartNoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitCost" msprop:Generator_UserColumnName="UnitCost" msprop:Generator_ColumnVarNameInTable="columnUnitCost" msprop:Generator_ColumnPropNameInRow="UnitCost" msprop:Generator_ColumnPropNameInTable="UnitCostColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalQuantity" msprop:Generator_UserColumnName="TotalQuantity" msprop:Generator_ColumnVarNameInTable="columnTotalQuantity" msprop:Generator_ColumnPropNameInRow="TotalQuantity" msprop:Generator_ColumnPropNameInTable="TotalQuantityColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SellingPrice1" msprop:Generator_UserColumnName="SellingPrice1" msprop:Generator_ColumnVarNameInTable="columnSellingPrice1" msprop:Generator_ColumnPropNameInRow="SellingPrice1" msprop:Generator_ColumnPropNameInTable="SellingPrice1Column" type="xs:double" minOccurs="0" />
+              <xs:element name="SellingPrice2" msprop:Generator_UserColumnName="SellingPrice2" msprop:Generator_ColumnVarNameInTable="columnSellingPrice2" msprop:Generator_ColumnPropNameInRow="SellingPrice2" msprop:Generator_ColumnPropNameInTable="SellingPrice2Column" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ViewPriceSetting" />
+      <xs:field xpath="mstns:PartNo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

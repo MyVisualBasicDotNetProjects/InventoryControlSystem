@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8C54D78-AEAE-4E92-8B15-47FC92473BB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>InventoryControlSystem.My.MyApplication</StartupObject>
+    <RootNamespace>InventoryControlSystem</RootNamespace>
+    <AssemblyName>InventoryControlSystem</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>SICS Icon.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>EAE708C4021E9ABC772D6497CA5E256023C51B92</ManifestCertificateThumbprint>
+    <ManifestKeyFile>InventoryControlSystem_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <PublishUrl>C:\Users\ruhama\Desktop\SICS Software Setup3\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Sparepart Inventory Control System</ProductName>
+    <PublisherName>BDNN Co.</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>InventoryControlSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>InventoryControlSystem.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="CreateUserAccount.Designer.vb">
+      <DependentUpon>CreateUserAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUserAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prod4SalesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Prod4SalesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SalesInfoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesInfoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SalesInfoDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesInfoDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryControlSystemDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryControlSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryControlSystemDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryControlSystemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryControlSystemDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryControlSystemDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryControlSystemDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventoryControlSystemDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDataSetWithType.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataSetWithType.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OrderReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProductsReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PInvoiceNoDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PInvoiceNoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PriceSetting.Designer.vb">
+      <DependentUpon>PriceSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PriceSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceSettingDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PriceSettingDataSet.xsd</DependentUpon>
+    </Compile ~dulla^@204~ ~dulla^@204~ oducts.vb">
+      <SubType>Form</Sub~dulla^@204~ Compile>
+    <Compile Include="Produ~dulla^@204~ vb">
+      <DependentUpon>Products.v~dulla^@204~ pon>
+      <SubType>Form</SubType>
+~dulla^@204~ >
+    <Compile Include="My Project\A~dulla^@204~ b" />
+    <Compile Include="My Proje~dulla^@204~ n.Designer.vb">
+      <AutoGen>True<~dulla^@204~     <DependentUpon>Application.myapp<~dulla^@204~ n>
+    </Compile>
+    <Compile Incl~dulla^@204~ ct\Resources.Designer.vb">
+      <Au~dulla^@204~ utoGen>
+      <DesignTime>True</Desi~dulla^@204~   <DependentUpon>Resources.resx</Depe~dulla^@204~    </Compile>
+    <Compile Include="~dulla^@204~ ttings.Designer.vb">
+      <AutoGen>~dulla^@204~ >
+      <DependentUpon>Settings.sett~dulla^@204~ ntUpon>
+      <DesignTimeSharedInput~dulla^@204~ TimeSharedInput>
+    </Compile>
+   ~dulla^@204~ lude="ProductsDataSet.Designer.vb">
+~dulla^@204~ n>True</AutoGen>
+      <DesignTime>T~dulla^@204~ me>
+      <DependentUpon>ProductsDat~dulla^@204~ endentUpon>
+    </Compile>
+    <Com~dulla^@204~ "ProductsTableDataSet.Designer.vb">
+~dulla^@204~ n>True</AutoGen>
+      <DesignTime>T~dulla^@204~ me>
+      <DependentUpon>ProductsTab~dulla^@204~ </DependentUpon>
+    </Compile>
+   ~dulla^@204~ lude="PurchaseEntry.Designer.vb">
+  ~dulla^@204~ tUpon>PurchaseEntry.vb</DependentUpon~dulla^@204~ ile>
+    <Compile Include="PurchaseE~dulla^@204~     <SubType>Form</SubType>
+    </Co~dulla^@204~ Compile Include="PurchaseInfoDataSet.~dulla^@204~ 
+      <AutoGen>True</AutoGen>
+    ~dulla^@204~ >True</DesignTime>
+      <DependentU~dulla^@204~ nfoDataSet.xsd</DependentUpon>
+    <~dulla^@204~   <Compile Include="PurchaseInfoDataS~dulla^@204~ vb">
+      <AutoGen>True</AutoGen>
+~dulla^@204~ Time>True</DesignTime>
+      <Depend~dulla^@204~ aseInfoDataSet2.xsd</DependentUpon>
+~dulla^@204~ >
+    <Compile Include="QuantityDivi~dulla^@204~ .vb">
+      <DependentUpon>QuantityD~dulla^@204~ ependentUpon>
+    </Compile>
+    <C~dulla^@204~ e="QuantityDivision.vb">
+      <SubT~dulla^@204~ Type>
+    </Compile>
+    <Compile I~dulla^@204~ tOfOrders.Designer.vb">
+      <Depen~dulla^@204~ rtOfOrders.vb</DependentUpon>
+    </~dulla^@204~  <Compile Include="ReportOfOrders.vb"~dulla^@204~ Type>Form</SubType>
+    </Compile>
+~dulla^@204~ Include="ReportOfProducts.Designer.vb~dulla^@204~ pendentUpon>ReportOfProducts.vb</Depe~dulla^@204~    </Compile>
+    <Compile Include="~dulla^@204~ cts.vb">
+      <SubType>Form</SubTyp~dulla^@204~ pile>
+    <Compile Include="ReportOf~dulla^@204~ igner.vb">
+      <DependentUpon>Repo~dulla^@204~ .vb</DependentUpon>
+    </Compile>
+~dulla^@204~ Include="ReportOfStockCard.vb">
+    ~dulla^@204~ rm</SubType>
+    </Compile>
+    <Co~dulla^@204~ ="Reports.Designer.vb">
+      <Depen~dulla^@204~ rts.vb</DependentUpon>
+    </Compile~dulla^@204~ le Include="Reports.vb">
+      <SubT~dulla^@204~ Type>
+    </Compile>
+    <Compile I~dulla^@204~  Table.Designer.vb">
+      <Dependen~dulla^@204~ able.vb</DependentUpon>
+    </Compil~dulla^@204~ ile Include="Sales Table.vb">
+      ~dulla^@204~ </SubType>
+    </Compile>
+    <Comp~dulla^@204~ SalesDataSet.Designer.vb">
+      <Au~dulla^@204~ utoGen>
+      <DesignTime>True</Desi~dulla^@204~   <DependentUpon>SalesDataSet.xsd</De~dulla^@204~ 
+    </Compile>
+    <Compile Include~dulla^@204~ assword.Designer.vb">
+      <Depende~dulla^@204~ UserPassword.vb</DependentUpon>
+    ~dulla^@204~    <Compile Include="ChangeUserPasswo~dulla^@204~   <SubType>Form</SubType>
+    </Comp~dulla^@204~ mpile Include="Settings.vb" />
+    <~dulla^@204~ de="StockCardReport.vb">
+      <Auto~dulla^@204~ oGen>
+      <DesignTime>True</Design~dulla^@204~ <DependentUpon>StockCardReport.rpt</D~dulla^@204~ 
+      <SubType>Component</SubType>~dulla^@204~ e>
+    <Compile Include="UserLogin.D~dulla^@204~ 
+      <DependentUpon>UserLogin.vb</D~dulla^@204~ 
+    </Compile>
+    <Compile Includ~dulla^@204~ vb">
+      <SubType>Form</SubType>
+~dulla^@204~ >
+  </ItemGroup>
+  <ItemGroup>
+   ~dulla^@204~ ource Include="CreateUserAccount.resx~dulla^@204~ bType>Designer</SubType>
+      <Depe~dulla^@204~ ateUserAccount.vb</DependentUpon>
+  ~dulla^@204~ esource>
+    <EmbeddedResource Inclu~dulla^@204~ ">
+      <SubType>Designer</SubType>~dulla^@204~ ndentUpon>Home.vb</DependentUpon>
+  ~dulla^@204~ esource>
+    <EmbeddedResource Inclu~dulla^@204~ rt.rpt">
+      <Generator>CrystalDec~dulla^@204~ gner.CodeGen.ReportCodeGenerator</Gen~dulla^@204~   <LastGenOutput>OrderReport.vb</Last~dulla^@204~    </EmbeddedResource>
+    <Embedded~dulla^@204~ ude="ProductsReport.rpt">
+      <Gen~dulla^@204~ lDecisions.VSDesigner.CodeGen.ReportC~dulla^@204~ /Generator>
+      <LastGenOutput>Pro~dulla^@204~ b</LastGenOutput>
+    </EmbeddedReso~dulla^@204~ mbeddedResource Include="PriceSetting~dulla^@204~   <SubType>Designer</SubType>
+      ~dulla^@204~ n>PriceSetting.vb</DependentUpon>
+  ~dulla^@204~ esource>
+    <EmbeddedResource Inclu~dulla^@204~ resx">
+      <DependentUpon>Products~dulla^@204~ tUpon>
+      <SubType>Designer</SubT~dulla^@204~ mbeddedResource>
+    <EmbeddedResour~dulla^@204~ y Project\Resources.resx">
+      <Ge~dulla^@204~ esourcesResXFileCodeGenerator</Genera~dulla^@204~ LastGenOutput>Resources.Designer.vb</~dulla^@204~ >
+      <CustomToolNamespace>My.Reso~dulla^@204~ ToolNamespace>
+      <SubType>Design~dulla^@204~ 
+    </EmbeddedResource>
+    <Embedd~dulla^@204~ clude="PurchaseEntry.resx">
+      <S~dulla^@204~ er</SubType>
+      <DependentUpon>Pu~dulla^@204~ b</DependentUpon>
+    </EmbeddedReso~dulla^@204~ mbeddedResource Include="QuantityDivi~dulla^@204~       <SubType>Designer</SubType>
+  ~dulla^@204~ tUpon>QuantityDivision.vb</DependentU~dulla^@204~ mbeddedResource>
+    <EmbeddedResour~dulla^@204~ eportOfOrders.resx">
+      <SubType>~dulla^@204~ Type>
+      <DependentUpon>ReportOfO~dulla^@204~ endentUpon>
+    </EmbeddedResource>~dulla^@204~ dResource Include="ReportOfProducts.r~dulla^@204~ <SubType>Designer</SubType>
+      <D~dulla^@204~ ReportOfProducts.vb</DependentUpon>
+~dulla^@204~ dResource>
+    <EmbeddedResource Inc~dulla^@204~ fStockCard.resx">
+      <SubType>Des~dulla^@204~ e>
+      <DependentUpon>ReportOfStoc~dulla^@204~ endentUpon>
+    </EmbeddedResource>~dulla^@204~ dResource Include="Reports.resx">
+  ~dulla^@204~ Designer</SubType>
+      <DependentU~dulla^@204~ b</DependentUpon>
+    </EmbeddedReso~dulla^@204~ mbeddedResource Include="Sales Table.~dulla^@204~  <SubType>Designer</SubType>
+      <~dulla^@204~ >Sales Table.vb</DependentUpon>
+    ~dulla^@204~ ource>
+    <EmbeddedResource Include~dulla^@204~ assword.resx">
+      <SubType>Design~dulla^@204~ 
+      <DependentUpon>ChangeUserPassw~dulla^@204~ dentUpon>
+    </EmbeddedResource>
+ ~dulla^@204~ esource Include="StockCardReport.rpt"~dulla^@204~ erator>CrystalDecisions.VSDesigner.Co~dulla^@204~ odeGenerator</Generator>
+      <Last~dulla^@204~ ckCardReport.vb</LastGenOutput>
+    ~dulla^@204~ ource>
+    <EmbeddedResource Include~dulla^@204~ esx">
+      <SubType>Designer</SubTy~dulla^@204~ ependentUpon>UserLogin.vb</DependentU~dulla^@204~ mbeddedResource>
+  </ItemGroup>
+  <~dulla^@204~    <None Include="app.config" />
+   ~dulla^@204~ e="InventoryControlSystemDataSet.xsc"~dulla^@204~ endentUpon>InventoryControlSystemData~dulla^@204~ ndentUpon>
+    </None>
+    <None In~dulla^@204~ oryControlSystemDataSet.xsd">
+      ~dulla^@204~ DataSetGenerator</Generator>
+      <~dulla^@204~ >InventoryControlSystemDataSet.Design~dulla^@204~ nOutput>
+      <SubType>Designer</Su~dulla^@204~ /None>
+    <None Include="InventoryC~dulla^@204~ ataSet.xss">
+      <DependentUpon>In~dulla^@204~ lSystemDataSet.xsd</DependentUpon>
+ ~dulla^@204~    <None Include="InventoryControlSys~dulla^@204~ sc">
+      <DependentUpon>InventoryC~dulla^@204~ ataSet1.xsd</DependentUpon>
+    </No~dulla^@204~ e Include="InventoryControlSystemData~dulla^@204~      <Generator>MSDataSetGenerator</G~dulla^@204~     <LastGenOutput>InventoryControlSy~dulla^@204~ Designer.vb</LastGenOutput>
+      <S~dulla^@204~ er</SubType>
+    </None>
+    <None Include="InventoryControlSystemDataSet1.xs~dulla^@204~ ependentUpon>InventoryControlSystemDa~dulla^@204~ ependentUpon>
+    </None>
+    <None~dulla^@204~ entoryControlSystemDataSet2.xsc">
+  ~dulla^@204~ tUpon>InventoryControlSystemDataSet2.~dulla^@204~ tUpon>
+    </None>
+    <None Includ~dulla^@204~ ontrolSystemDataSet2.xsd">
+      <Ge~dulla^@204~ aSetGenerator</Generator>
+      <Las~dulla^@204~ ventoryControlSystemDataSet2.Designer~dulla^@204~ utput>
+      <SubType>Designer</SubT~dulla^@204~ one>
+    <None Include="InventoryCon~dulla^@204~ aSet2.xss">
+      <DependentUpon>Inv~dulla^@204~ SystemDataSet2.xsd</DependentUpon>
+ ~dulla^@204~    <None Include="InventoryControlSys~dulla^@204~ sc">
+      <DependentUpon>InventoryC~dulla^@204~ ataSet3.xsd</DependentUpon>
+    </No~dulla^@204~ e Include="InventoryControlSystemData~dulla^@204~      <Generator>MSDataSetGenerator</G~dulla^@204~     <LastGenOutput>InventoryControlSy~dulla^@204~ Designer.vb</LastGenOutput>
+      <S~dulla^@204~ er</SubType>
+    </None>
+    <None ~dulla^@204~ ntoryControlSystemDataSet3.xss">
+   ~dulla^@204~ Upon>InventoryControlSystemDataSet3.x~dulla^@204~ Upon>
+    </None>
+    <None Include~dulla^@204~ t.xsc">
+      <DependentUpon>LoginDa~dulla^@204~ pendentUpon>
+    </None>
+    <None ~dulla^@204~ nDataSet.xsd">
+      <Generator>MSDa~dulla^@204~ r</Generator>
+      <LastGenOutput>L~dulla^@204~ esigner.vb</LastGenOutput>
+      <Su~dulla^@204~ r</SubType>
+    </None>
+    <None I~dulla^@204~ DataSet.xss">
+      <DependentUpon>L~dulla^@204~ sd</DependentUpon>
+    </None>
+    ~dulla^@204~ ="LoginDataSetWithType.xsc">
+      <~dulla^@204~ >LoginDataSetWithType.xsd</DependentU~dulla^@204~ one>
+    <None Include="LoginDataSet~dulla^@204~ >
+      <Generator>MSDataSetGenerato~dulla^@204~ 
+      <LastGenOutput>LoginDataSetWi~dulla^@204~ er.vb</LastGenOutput>
+      <SubType~dulla^@204~ bType>
+    </None>
+    <None Includ~dulla^@204~ etWithType.xss">
+      <DependentUpo~dulla^@204~ tWithType.xsd</DependentUpon>
+    </~dulla^@204~ one Include="My Project\Application.m~dulla^@204~  <Generator>MyApplicationCodeGenerato~dulla^@204~ 
+      <LastGenOutput>Application.De~dulla^@204~ stGenOutput>
+    </None>
+    <None ~dulla^@204~ roject\Settings.settings">
+      <Ge~dulla^@204~ ngsSingleFileGenerator</Generator>
+ ~dulla^@204~ oolNamespace>My</CustomToolNamespace>~dulla^@204~ GenOutput>Settings.Designer.vb</LastG~dulla^@204~   </None>
+    <None Include="PriceSe~dulla^@204~ xsc">
+      <DependentUpon>PriceSett~dulla^@204~ d</DependentUpon>
+    </None>
+    <~dulla^@204~ "PriceSettingDataSet.xsd">
+      <Ge~dulla^@204~ aSetGenerator</Generator>
+      <Las~dulla^@204~ iceSettingDataSet.Designer.vb</LastGe~dulla^@204~    <SubType>Designer</SubType>
+    <~dulla^@204~ None Include="PriceSettingDataSet.xss~dulla^@204~ pendentUpon>PriceSettingDataSet.xsd</~dulla^@204~ >
+    </None>
+    <None Include="Pr~dulla^@204~ .xsc">
+      <DependentUpon>Products~dulla^@204~ DependentUpon>
+    </None>
+    <Non~dulla^@204~ oductsDataSet.xsd">
+      <Generator~dulla^@204~ erator</Generator>
+      <LastGenOut~dulla^@204~ ataSet.Designer.vb</LastGenOutput>
+ ~dulla^@204~ >Designer</SubType>
+    </None>
+   ~dulla^@204~ e="ProductsDataSet.xss">
+      <Depe~dulla^@204~ ductsDataSet.xsd</DependentUpon>
+   ~dulla^@204~  <None Include="ProductsTableDataSet.~dulla^@204~ <DependentUpon>ProductsTableDataSet.x~dulla^@204~ Upon>
+    </None>
+    <None Include~dulla^@204~ leDataSet.xsd">
+      <Generator>MSD~dulla^@204~ or</Generator>
+      <LastGenOutput>~dulla^@204~ DataSet.Designer.vb</LastGenOutput>
+~dulla^@204~ e>Designer</SubType>
+    </None>
+  ~dulla^@204~ de="ProductsTableDataSet.xss">
+     ~dulla^@204~ on>ProductsTableDataSet.xsd</Dependen~dulla^@204~ /None>
+    <None Include="PurchaseIn~dulla^@204~ c">
+      <DependentUpon>PurchaseInf~dulla^@204~ </DependentUpon>
+    </None>
+    <N~dulla^@204~ PurchaseInfoDataSet2.xsd">
+      <Ge~dulla^@204~ aSetGenerator</Generator>
+      <Las~dulla^@204~ rchaseInfoDataSet2.Designer.vb</LastG~dulla^@204~     <SubType>Designer</SubType>
+    ~dulla^@204~ <None Include="PurchaseInfoDataSet2.x~dulla^@204~ DependentUpon>PurchaseInfoDataSet2.xs~dulla^@204~ pon>
+    </None>
+    <None Include=~dulla^@204~ .xsc">
+      <DependentUpon>SalesDat~dulla^@204~ endentUpon>
+    </None>
+    <None I~dulla^@204~ DataSet.xsd">
+      <Generator>MSDat~dulla^@204~ </Generator>
+      <LastGenOutput>Sa~dulla^@204~ signer.vb</LastGenOutput>
+      <Sub~dulla^@204~ </SubType>
+    </None>
+    <None In~dulla^@204~ ataSet.xss">
+      <DependentUpon>Sa~dulla^@204~ d</DependentUpon>
+    </None>
+  </I~dulla^@204~ <ItemGroup>
+    <Service Include="{9~dulla^@204~ 4609-AB67-0FA40C0206D8}" />
+  </Item~dulla^@204~ emGroup>
+    <None Include="Resource~dulla^@204~ nt.png" />
+  </ItemGroup>
+  <ItemGr~dulla^@204~ ne Include="Resources\bguseraccount1.~dulla^@204~ ItemGroup>
+  <ItemGroup>
+    <None ~dulla^@204~ urces\window.png" />
+  </ItemGroup>~dulla^@204~ >
+    <None Include="Resources\minim~dulla^@204~   </ItemGroup>
+  <ItemGroup>
+    <N~dulla^@204~ Resources\close.png" />
+  </ItemGrou~dulla^@204~ oup>
+    <None Include="Resources\MA~dulla^@204~ >
+  </ItemGroup>
+  <ItemGroup>
+   ~dulla^@204~ e="Resources\Products.png" />
+  </It~dulla^@204~ ItemGroup>
+    <None Include="Resour~dulla^@204~ " />
+  </ItemGroup>
+  <ItemGroup>
+~dulla^@204~ lude="Resources\bgProducts.png" />
+ ~dulla^@204~ 
+  <ItemGroup>
+    <None Include="P~dulla^@204~ Set.xsc">
+      <DependentUpon>PInvo~dulla^@204~ xsd</DependentUpon>
+    </None>
+   ~dulla^@204~ e="PInvoiceNoDataSet.xsd">
+      <Ge~dulla^@204~ aSetGenerator</Generator>
+      <Las~dulla^@204~ nvoiceNoDataSet.Designer.vb</LastGenO~dulla^@204~  <SubType>Designer</SubType>
+    </N~dulla^@204~ ne Include="PInvoiceNoDataSet.xss">
+~dulla^@204~ entUpon>PInvoiceNoDataSet.xsd</Depend~dulla^@204~  </None>
+    <None Include="Resource~dulla^@204~ ing.png" />
+  </ItemGroup>
+  <ItemG~dulla^@204~ one Include="Resources\bgQuantityDivi~dulla^@204~ 
+  </ItemGroup>
+  <ItemGroup>
+    <~dulla^@204~ "Resources\MANIMENU.png" />
+  </Item~dulla^@204~ emGroup>
+    <None Include="Resource~dulla^@204~ .png" />
+  </ItemGroup>
+  <ItemGrou~dulla^@204~  Include="Resources\btnSales.png" />~dulla^@204~ p>
+  <ItemGroup>
+    <None Include=~dulla^@204~ nPurchase.png" />
+  </ItemGroup>
+  ~dulla^@204~     <None Include="Resources\btnUsers~dulla^@204~ /ItemGroup>
+  <ItemGroup>
+    <None~dulla^@204~ ources\btnReports.png" />
+  </ItemGr~dulla^@204~ Group>
+    <None Include="Resources\~dulla^@204~ " />
+  </ItemGroup>
+  <ItemGroup>
+~dulla^@204~ lude="Resources\btnPassword.png" />
+~dulla^@204~ >
+  <ItemGroup>
+    <None Include="~dulla^@204~ BackUp2.png" />
+  </ItemGroup>
+  <I~dulla^@204~   <None Include="Resources\btnProduct~dulla^@204~  </ItemGroup>
+  <ItemGroup>
+    <No~dulla^@204~ esources\btnSales2.png" />
+  </ItemG~dulla^@204~ mGroup>
+    <None Include="Resources~dulla^@204~ .png" />
+  </ItemGroup>
+  <ItemGrou~dulla^@204~  Include="Resources\btnReports2.png" ~dulla^@204~ roup>
+  <ItemGroup>
+    <None Inclu~dulla^@204~ \btnUsers2.png" />
+  </ItemGroup>
+ ~dulla^@204~ 
+    <None Include="PurchaseInfoDataS~dulla^@204~    <DependentUpon>PurchaseInfoDataSet~dulla^@204~ ntUpon>
+    </None>
+    <None Inclu~dulla^@204~ nfoDataSet.xsd">
+      <SubType>Desi~dulla^@204~ >
+      <Generator>MSDataSetGenerato~dulla^@204~ 
+      <LastGenOutput>PurchaseInfoDa~dulla^@204~ r.vb</LastGenOutput>
+    </None>
+  ~dulla^@204~ de="PurchaseInfoDataSet.xss">
+      ~dulla^@204~ n>PurchaseInfoDataSet.xsd</DependentU~dulla^@204~ one>
+    <None Include="Resources\bt~dulla^@204~ g" />
+  </ItemGroup>
+  <ItemGroup>~dulla^@204~ clude="Resources\bgSales.png" />
+  <~dulla^@204~   <ItemGroup>
+    <None Include="Res~dulla^@204~ gePassword.png" />
+  </ItemGroup>
+ ~dulla^@204~ 
+    <None Include="Resources\bgCreat~dulla^@204~ png" />
+  </ItemGroup>
+  <ItemGroup~dulla^@204~ Include="Resources\bgReports.png" />~dulla^@204~ p>
+  <ItemGroup>
+    <None Include=~dulla^@204~ me.png" />
+    <None Include="SalesInfoDataSet.xsc">
+      <DependentUpon>Sal~dulla^@204~ .xsd</DependentUpon>
+    </None>
+  ~dulla^@204~ de="SalesInfoDataSet.xsd">
+      <Ge~dulla^@204~ aSetGenerator</Generator>
+      <Las~dulla^@204~ lesInfoDataSet.Designer.vb</LastGenOu~dulla^@204~ <SubType>Designer</SubType>
+    </No~dulla^@204~ e Include="SalesInfoDataSet.xss">
+  ~dulla^@204~ tUpon>SalesInfoDataSet.xsd</Dependent~dulla^@204~ None>
+    <None Include="SalesInfoDa~dulla^@204~ 
+      <DependentUpon>SalesInfoDataSe~dulla^@204~ dentUpon>
+    </None>
+    <None Inc~dulla^@204~ foDataSet2.xsd">
+      <Generator>MS~dulla^@204~ tor</Generator>
+      <LastGenOutput~dulla^@204~ aSet2.Designer.vb</LastGenOutput>
+  ~dulla^@204~ Designer</SubType>
+    </None>
+    ~dulla^@204~ ="SalesInfoDataSet2.xss">
+      <Dep~dulla^@204~ lesInfoDataSet2.xsd</DependentUpon>
+~dulla^@204~   </ItemGroup>
+  <ItemGroup>
+    <N~dulla^@204~ Resources\login.jpg" />
+  </ItemGrou~dulla^@204~ oup>
+    <None Include="InventoryCon~dulla^@204~ mporaryKey.pfx" />
+    <BaseApplicat~dulla^@204~ nclude="My Project\app.manifest" />
+~dulla^@204~ lude="Prod4SalesDataSet.xsc">
+      ~dulla^@204~ n>Prod4SalesDataSet.xsd</DependentUpo~dulla^@204~ e>
+    <None Include="Prod4SalesData~dulla^@204~     <Generator>MSDataSetGenerator</Ge~dulla^@204~    <LastGenOutput>Prod4SalesDataSet.D~dulla^@204~ astGenOutput>
+      <SubType>Designe~dulla^@204~     </None>
+    <None Include="Prod4~dulla^@204~ xss">
+      <DependentUpon>Prod4Sale~dulla^@204~ /DependentUpon>
+    </None>
+    <No~dulla^@204~ esources\login1.jpg" />
+  </ItemGrou~dulla^@204~ oup>
+    <Content Include="SICS Icon~dulla^@204~ /ItemGroup>
+  <ItemGroup>
+    <Boot~dulla^@204~ ge Include="Microsoft.Net.Framework.2~dulla^@204~ Visible>False</Visible>
+      <Produ~dulla^@204~ ramework 2.0</ProductName>
+      <In~dulla^@204~ nstall>
+    </BootstrapperPackage>
+~dulla^@204~ >
+  <Import Project="$(MSBuildBinPat~dulla^@204~ VisualBasic.targets" />
+  <!-- To mo~dulla^@204~ ld process, add your task inside one ~dulla^@204~ s below and uncomment it. 
+       Ot~dulla^@204~ xtension points exist, see Microsoft.~dulla^@204~ s.
+  <Target Name="BeforeBuild">
+  ~dulla^@204~ <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

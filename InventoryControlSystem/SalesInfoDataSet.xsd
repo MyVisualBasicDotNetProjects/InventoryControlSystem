@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SalesInfoDataSet" targetNamespace="http://tempuri.org/SalesInfoDataSet.xsd" xmlns:mstns="http://tempuri.org/SalesInfoDataSet.xsd" xmlns="http://tempuri.org/SalesInfoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="PurchaseInfoConnection" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="PurchaseInfoConnection (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.InventoryControlSystem.My.MySettings.GlobalReference.Default.PurchaseInfoConnection" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SalesInfoTableAdapter" GeneratorDataComponentClassName="SalesInfoTableAdapter" Name="SalesInfo" UserDataComponentName="SalesInfoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PurchaseInfoConnection (MySettings)" DbObjectName="InventoryControlSystem.dbo.SalesInfo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT PartNo, Description, Quantity, UnitPrice, Amount, DateOfSale FROM dbo.SalesInfo</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PartNo" DataSetColumn="PartNo" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="DateOfSale" DataSetColumn="DateOfSale" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SalesInfoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SalesInfoDataSet" msprop:Generator_DataSetName="SalesInfoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SalesInfo" msprop:Generator_UserTableName="SalesInfo" msprop:Generator_RowDeletedName="SalesInfoRowDeleted" msprop:Generator_RowChangedName="SalesInfoRowChanged" msprop:Generator_RowClassName="SalesInfoRow" msprop:Generator_RowChangingName="SalesInfoRowChanging" msprop:Generator_RowEvArgName="SalesInfoRowChangeEvent" msprop:Generator_RowEvHandlerName="SalesInfoRowChangeEventHandler" msprop:Generator_TableClassName="SalesInfoDataTable" msprop:Generator_TableVarName="tableSalesInfo" msprop:Generator_RowDeletingName="SalesInfoRowDeleting" msprop:Generator_TablePropName="SalesInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PartNo" msprop:Generator_UserColumnName="PartNo" msprop:Generator_ColumnVarNameInTable="columnPartNo" msprop:Generator_ColumnPropNameInRow="PartNo" msprop:Generator_ColumnPropNameInTable="PartNoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DateOfSale" msprop:Generator_UserColumnName="DateOfSale" msprop:Generator_ColumnVarNameInTable="columnDateOfSale" msprop:Generator_ColumnPropNameInRow="DateOfSale" msprop:Generator_ColumnPropNameInTable="DateOfSaleColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
